@@ -61,7 +61,7 @@ export function App() {
 
       <nav className="sidebar">
         <NavItem icon="upload" label="Import" active={view === 'import'} onClick={() => setView('import')} />
-        <NavItem icon="plug" label="Connect" active={view === 'aggregate'} onClick={() => setView('aggregate')} badge="soon" />
+        <NavItem icon="plug" label="Connect" active={view === 'aggregate'} onClick={() => setView('aggregate')} />
         <NavItem icon="film" label="Timeline" active={view === 'timeline'} onClick={() => setView('timeline')} disabled={!active} />
 
         <div className="side-section">Cases</div>
@@ -86,7 +86,7 @@ export function App() {
 
       <main className="main">
         {view === 'import' && <ImportView status={status} onCase={openCase} />}
-        {view === 'aggregate' && <AggregateView />}
+        {view === 'aggregate' && <AggregateView onCase={openCase} />}
         {view === 'timeline' && (active ? <TimelineView key={active.id} c={active} status={status} onUpdate={refresh} /> : <Empty onGo={() => setView('import')} />)}
       </main>
     </div>

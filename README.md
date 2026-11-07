@@ -73,9 +73,26 @@ samples/           generated demo datasets
 scripts/           setup.ps1 · start.ps1 · gen-samples.ts · try-engine.ts
 ```
 
+## Connect: pull logs from your machines
+
+On the **Connect** page you add each machine by IP address. The port fills in with the default for that source type, and you can override it. **Test** checks access and **Collect** pulls the chosen time window from every selected source at once. The result becomes a case that goes through the same parser and analysis as uploaded files. Credentials stay on the server in `data/sources.json` (gitignored), and the browser never sees them again.
+
+| Source | How it connects (default port) | What it collects |
+|---|---|---|
+| Docker | Engine API (2375, or 2376 with TLS), or the `docker` CLI over SSH (22) | Container stdout/stderr and daemon events (start, exec, kill…) |
+| Kubernetes | API server (6443) with a read-only service-account token | Pod container logs and cluster events |
+| OpenWrt | SSH (22) | `logread` ring buffer (firewall drops, DNS queries, DHCP, logins), the live connection table (`nf_conntrack`), DHCP leases, interface counters |
+| Proxmox VE | SSH (22) | Host journal, PVE task log (VM start/stop/backup/migrate), cluster log, PVE firewall log, open connections |
+| Linux | SSH (22) | systemd journal (or auth.log/syslog), open connections |
+| Windows | Built-in OpenSSH Server (22), running `Get-WinEvent` | Security, System, Application, Sysmon, PowerShell, Defender and RDP event logs |
+| SeenVisualizer agent | HTTP (9870) with a token | CPU, RAM, GPU, disk usage, disk read/write and network history, plus the host's own event logs. See [agent/README.md](agent/README.md) |
+
+**OpenWrt doesn't log network activity by default.** The **Enable traffic logging** button (opt-in) turns on DNS-query logging, WAN firewall logging and per-connection byte counters, and enlarges the log buffer.
+
 ## Roadmap
 
-- **Aggregate logs** (button in place): live connectors for Docker, Kubernetes, Prometheus/Loki, Outlook/M365, syslog receiver, CloudTrail, Splunk/Elastic and Windows Event Forwarding. These feed the same `parseFile()` pipeline.
+- More connectors: Prometheus/Loki, Outlook/M365, a syslog receiver, CloudTrail, Splunk/Elastic. Also a Proxmox REST-API mode that uses an API token instead of SSH, and NetFlow from the router for full traffic history.
+- Detection rules over the hardware metrics, for example sustained CPU spikes tied to the process causing them, and a utilization chart on the timeline.
 - Multi-incident clustering, case notes and sharing, and STIX export of IOCs.
 
 ## Licenses

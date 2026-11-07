@@ -8,7 +8,8 @@ import { join } from 'node:path';
 import type { Level, Status } from '../shared/types.ts';
 import { analyzeWithClaude, claudeAvailable, MODEL } from './analysis/claude.ts';
 import { analyzeHeuristic } from './analysis/heuristic.ts';
-import { DATA, PORT, SAMPLES, WEB_DIST, listVoices } from './paths.ts';
+import { collectSources, enableOpenWrtLogging, getSource, listSources, removeSource, testSource, toPublic, upsertSource } from './connectors/index.ts';
+import { DATA, PORT, ROOT, SAMPLES, WEB_DIST, listVoices } from './paths.ts';
 import { getRenderJob, startRender } from './render.ts';
 import { createCase, deleteCase, getCase, listCases, loadAll, save, summary, type Case } from './store.ts';
 import { narrateScenes, ttsAvailable } from './tts.ts';
@@ -41,18 +42,64 @@ app.get('/api/samples', (_req, res) => {
   );
 });
 
-app.get('/api/integrations', (_req, res) => {
-  res.json([
-    { id: 'docker', name: 'Docker', desc: 'Stream container stdout/stderr via the Docker Engine API', status: 'planned' },
-    { id: 'kubernetes', name: 'Kubernetes', desc: 'Pod logs + audit logs from the API server', status: 'planned' },
-    { id: 'prometheus', name: 'Prometheus / Loki', desc: 'Alerts and log streams via LogQL', status: 'planned' },
-    { id: 'outlook', name: 'Outlook / M365', desc: 'Message trace + unified audit log', status: 'planned' },
-    { id: 'syslog', name: 'Syslog receiver', desc: 'Listen on UDP/TCP 514 for live events', status: 'planned' },
-    { id: 'cloudtrail', name: 'AWS CloudTrail', desc: 'Management + data events from S3', status: 'planned' },
-    { id: 'splunk', name: 'Splunk / Elastic', desc: 'Pull saved searches over REST', status: 'planned' },
-    { id: 'windows', name: 'Windows Event Forwarding', desc: 'Security, Sysmon and PowerShell channels', status: 'planned' },
-  ]);
+// ---- log sources (Connect page) ---------------------------------------------
+app.get('/api/sources', (_req, res) => res.json(listSources()));
+
+app.post('/api/sources', (req, res) => {
+  try {
+    res.json(toPublic(upsertSource(req.body ?? {})));
+  } catch (e: any) {
+    res.status(400).json({ error: e.message });
+  }
 });
+
+app.put('/api/sources/:id', (req, res) => {
+  try {
+    res.json(toPublic(upsertSource(req.body ?? {}, req.params.id)));
+  } catch (e: any) {
+    res.status(400).json({ error: e.message });
+  }
+});
+
+app.delete('/api/sources/:id', (req, res) => {
+  removeSource(req.params.id);
+  res.json({ ok: true });
+});
+
+app.post('/api/sources/:id/test', async (req, res) => {
+  const s = getSource(req.params.id);
+  if (!s) return res.status(404).json({ error: 'No such source' });
+  res.json(await testSource(s));
+});
+
+/** Opt-in router change: turn on DNS-query, firewall and connection-byte logging. */
+app.post('/api/sources/:id/openwrt-logging', async (req, res) => {
+  const s = getSource(req.params.id);
+  if (!s || s.kind !== 'openwrt') return res.status(404).json({ error: 'No such OpenWrt source' });
+  try {
+    res.json({ ok: true, detail: await enableOpenWrtLogging(s) });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/** Pull logs from the chosen (default: all enabled) sources for a time window and open them as a case. */
+app.post('/api/collect', async (req, res) => {
+  const ids: string[] | undefined = Array.isArray(req.body?.ids) ? req.body.ids : undefined;
+  const list = listSources().filter((s) => (ids ? ids.includes(s.id) : s.enabled)).map((s) => getSource(s.id)!);
+  if (!list.length) return res.status(400).json({ error: 'No sources selected' });
+  const hours = Math.min(24 * 30, Math.max(0.05, Number(req.body?.hours ?? 24)));
+  const until = Date.now();
+  const { files, reports } = await collectSources(list, { since: until - hours * 3600_000, until });
+  if (!files.length) return res.status(422).json({ error: 'No logs came back from the selected sources.', reports });
+  const name = String(req.body?.name || `Collected · ${list.map((s) => s.name).join(', ')}`).slice(0, 80);
+  const c = createCase(name, files.map((f) => ({ name: f.name, text: f.text, bytes: Buffer.byteLength(f.text) })));
+  if (!c.recordCount) return res.status(422).json({ error: 'Logs came back, but none had readable timestamps.', reports });
+  runAnalysis(c, String(req.body?.engine || 'auto'));
+  res.json({ case: summary(c), reports });
+});
+
+app.get('/api/agent/seen-agent.mjs', (_req, res) => res.download(join(ROOT, 'agent', 'seen-agent.mjs'), 'seen-agent.mjs'));
 
 app.get('/api/cases', (_req, res) => res.json(listCases().map(summary)));
 

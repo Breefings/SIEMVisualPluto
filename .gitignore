@@ -6,3 +6,5 @@ data/
 npm-debug.log*
 /*.log
 .remotion/
+
+/agent/seen-agent-data/
