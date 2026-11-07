@@ -11,8 +11,7 @@ export function AggregateView() {
     <div className="page">
       <div className="page-head">
         <div>
-          <h1>Aggregate logs <span className="badge big">coming soon</span></h1>
-          <p className="lead">Pull logs live from your infrastructure instead of uploading files. The connectors below plug into the same parsing and analysis pipeline.</p>
+          <h1>Connect <span className="badge big">soon</span></h1>
         </div>
       </div>
       <div className="integrations">
@@ -23,16 +22,9 @@ export function AggregateView() {
               <b>{i.name}</b>
               <span className="badge">{i.status}</span>
             </div>
-            <p className="muted small">{i.desc}</p>
             <button className="btn ghost" disabled>Connect</button>
           </div>
         ))}
-      </div>
-      <div className="card note">
-        <Icon name="terminal" size={16} />
-        <div>
-          <b>Integration contract.</b> A connector only needs to produce text or JSON lines. The server parses them with <code>parseFile()</code> into normalized records, then runs the same detection, Claude analysis, timeline and video pipeline used for uploads (see <code>server/parsers.ts</code>).
-        </div>
       </div>
     </div>
   );

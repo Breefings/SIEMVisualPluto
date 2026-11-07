@@ -48,10 +48,8 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
       <div className="page center-col">
         <div className="analyzing">
           <div className="spinner" />
-          <h2>Reconstructing the attack…</h2>
-          <p className="muted">{c.analysis.message || 'Queued'}</p>
+          <h2>Analyzing…</h2>
           <div className="progress"><div style={{ width: `${Math.round(c.analysis.progress * 100)}%` }} /></div>
-          <div className="muted small">{c.recordCount.toLocaleString()} records from {c.sources.length} sources: {c.sources.map((s) => `${s.name} (${s.format})`).join(', ')}</div>
           {c.analysis.state === 'idle' && <button className="btn primary" onClick={() => api.analyze(c.id, engine).then(onUpdate)}>Run analysis</button>}
         </div>
       </div>
@@ -82,15 +80,13 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
           <span className="sev-tag" style={{ background: SEV_COLOR[inc.severity] }}>{inc.severity}</span>
           <h1>{level === 'layman' ? story.title : inc.title}</h1>
         </div>
-        <p className="lead">{inc.summary}</p>
         <div className="inc-meta">
-          <span><Icon name="clock" size={14} /> {fmtDate(inc.startTs)} · {fmtClock(inc.startTs)} → {fmtClock(inc.endTs)} UTC</span>
-          <span><Icon name="laptop" size={14} /> {hosts.length} host{hosts.length === 1 ? '' : 's'} compromised</span>
-          <span><Icon name="list" size={14} /> {inc.events.length} events · {inc.stats.flagged} evidence lines / {inc.stats.records.toLocaleString()} records</span>
-          <span className={`engine ${inc.engine}`}><Icon name="sparkles" size={14} /> {inc.engine === 'claude' ? `Analyzed by ${inc.model}` : 'Offline rule engine'}</span>
+          <span><Icon name="clock" size={14} /> {fmtDate(inc.startTs)} · {fmtClock(inc.startTs)} → {fmtClock(inc.endTs)}</span>
+          <span title="Compromised hosts"><Icon name="laptop" size={14} /> {hosts.length}</span>
+          <span className={`engine ${inc.engine}`} title={inc.engine === 'claude' ? `Analyzed by ${inc.model}` : 'Offline rule engine'}><Icon name="sparkles" size={14} /> {inc.engine === 'claude' ? 'Claude' : 'Offline'}</span>
           <span className="reanalyze">
             <EngineSelect engine={engine} setEngine={setEngine} status={status} />
-            <button className="btn ghost sm" onClick={() => api.analyze(c.id, engine).then(onUpdate)}>Re-analyze</button>
+            <button className="btn ghost sm" title="Re-analyze" onClick={() => api.analyze(c.id, engine).then(onUpdate)}><Icon name="sparkles" size={14} /></button>
           </span>
         </div>
         {c.analysis.error && <div className="warnbox"><Icon name="alert" size={14} /> {c.analysis.error}</div>}
@@ -110,12 +106,12 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
           {LEVELS.map((l) => (
             <button key={l.id} className={`level ${level === l.id ? 'on' : ''}`} style={{ ['--accent' as string]: LEVEL_ACCENT[l.id] }} onClick={() => setLevel(l.id)}>
               <Icon name={LEVEL_ICON[l.id]} size={18} />
-              <span><b>{l.label}</b><small>{l.blurb}</small></span>
+              <span><b>{l.label}</b></span>
             </button>
           ))}
         </div>
         <div className="seg big">
-          <button className={mode === 'interactive' ? 'on' : ''} onClick={() => setMode('interactive')}><Icon name="layers" size={16} /> Interactive timeline</button>
+          <button className={mode === 'interactive' ? 'on' : ''} onClick={() => setMode('interactive')}><Icon name="layers" size={16} /> Timeline</button>
           <button className={mode === 'video' ? 'on' : ''} onClick={() => setMode('video')}><Icon name="film" size={16} /> Video</button>
         </div>
       </div>
@@ -128,12 +124,11 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
           <div className="bottom">
             <div className="panel">
               <div className="tabs">
-                <button className={tab === 'story' ? 'on' : ''} onClick={() => setTab('story')}><Icon name="list" size={14} /> Story ({events.length})</button>
-                <button className={tab === 'logs' ? 'on' : ''} onClick={() => setTab('logs')}><Icon name="terminal" size={14} /> Raw logs in view</button>
+                <button className={tab === 'story' ? 'on' : ''} onClick={() => setTab('story')}><Icon name="list" size={14} /> Story</button>
+                <button className={tab === 'logs' ? 'on' : ''} onClick={() => setTab('logs')}><Icon name="terminal" size={14} /> Logs</button>
               </div>
               {tab === 'story' ? (
                 <div className="story">
-                  <div className="story-intro">{story.scenes[0]?.narration}</div>
                   {events.map((e, i) => (
                     <button key={e.id} className={`story-item ${e.id === selected ? 'on' : ''}`} onClick={() => setSelected(e.id)} style={{ ['--c' as string]: PHASE_COLOR[e.phase] }}>
                       <span className="si-rail"><span className="si-dot"><Icon name={PHASE_ICON[e.phase]} size={13} /></span>{i < events.length - 1 && <span className="si-line" />}</span>

@@ -185,14 +185,20 @@ h3 svg, .btn svg, .pill svg { flex: 0 0 auto; }
 .level.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 9%, #0a1222); box-shadow: 0 0 0 1px var(--accent), 0 8px 30px color-mix(in srgb, var(--accent) 15%, transparent); }
 .controls > .seg { align-self: center; }
 
-/* interactive timeline */
-.itl { padding: 0; position: relative; overflow: hidden; }
-.itl-toolbar { display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.itl-window { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 12.5px; color: #cbd5e1; }
-.hint { margin-left: auto; }
-.itl-svg { display: block; cursor: grab; user-select: none; touch-action: none; }
-.itl-svg:active { cursor: grabbing; }
-.minimap { display: block; border-top: 1px solid var(--line); cursor: pointer; user-select: none; touch-action: none; }
+/* interactive timeline: the video's stage, driven by the viewer */
+.stage-card { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #040812; }
+.stage { position: relative; width: 100%; overflow: hidden; cursor: grab; user-select: none; touch-action: none; }
+.stage:active { cursor: grabbing; }
+.stage-ctrl { position: absolute; right: 14px; bottom: 14px; display: flex; gap: 6px; padding: 5px; border-radius: 12px; background: rgba(4, 8, 18, 0.75); border: 1px solid var(--line); backdrop-filter: blur(8px); cursor: default; }
+.ctrl-sep { width: 1px; margin: 4px 2px; background: var(--line2); }
+.stage-card.full { display: flex; align-items: center; border: 0; border-radius: 0; }
+.stage-card.full .stage { flex: 1; }
+.stage-sub {
+  max-width: 1480px; padding: 14px 30px; border-radius: 18px; background: rgba(4, 8, 18, 0.78); backdrop-filter: blur(8px);
+  line-height: 1.35; font-weight: 600; text-align: center; color: #f1f5f9;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; animation: subIn 0.5s 0.9s both ease-out;
+}
+@keyframes subIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 .tip {
   position: absolute; z-index: 10; pointer-events: none; max-width: 330px; padding: 10px 12px; border-radius: 10px;
   background: rgba(6, 12, 24, 0.97); border: 1px solid var(--line2); box-shadow: 0 10px 30px #000a; font-size: 13px;

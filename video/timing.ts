@@ -4,7 +4,7 @@ export const FPS = 30;
 export const WIDTH = 1920;
 export const HEIGHT = 1080;
 /** Audio starts this many seconds into each scene (lets the scene animate in first). */
-export const LEAD_IN = 0.6;
+export const LEAD_IN = 1.0;
 const TAIL = 0.9;
 
 export interface VideoProps {

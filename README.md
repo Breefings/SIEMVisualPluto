@@ -14,8 +14,8 @@ During an incident, analysts face thousands of log lines across many tools. The 
    | **Entry-level SOC** | Tier-1 analyst | Attack phases, ATT&CK technique IDs, hosts/accounts, triage and escalation steps |
    | **Senior / IR lead** | Tier-3, DFIR | Commands, event IDs, decoded payloads, IOCs, confidence, detection gaps, containment plan |
 4. **Presents it two ways:**
-   - **Interactive timeline.** A zoomable, pannable swimlane per device. Scroll to go from "the whole day" down to individual seconds, and drag to pan. It includes lateral-movement arrows between hosts, red shading from the moment each host is compromised, a log-volume density band, raw evidence ticks you can hover, a minimap, a story feed, and a raw-log explorer for whatever window you are looking at.
-   - **Narrated motion-graphics video.** Built in code with [Remotion](https://remotion.dev) (React). An animated network map shows the infection spreading, packets travelling, C2 beacons, data streaming out and backdoor locks. It also has a fast-forwarding clock, karaoke captions, and voice-over from **[Piper](https://github.com/rhasspy/piper)**, an open-source neural TTS engine that runs locally. Each audience gets its own voice. Watch it in the browser or export an MP4 (720p by default; set `RENDER_SCALE=1` for 1080p).
+   - **Interactive timeline.** The same animated timeline as the video, but you drive it: click any checkpoint (or card, or use the arrow keys) and the camera flies there; scroll to zoom, drag to pan, and one button zooms back out to the whole attack. Below it are a story feed, event details with evidence, and a raw-log explorer for whatever window you are looking at.
+   - **Narrated motion-graphics video.** Built in code with [Remotion](https://remotion.dev) (React). It is styled like a historical-timeline video: it opens on the whole attack zoomed out, dives into the first event, then flies along the timeline from event to event (zooming out mid-flight, then back in). Each event card has its own animation (a phishing envelope opening, a radar sweep, a key being stolen, an arc jumping between hosts, files streaming out, logs being erased). It also has a fast-forwarding clock, parallax depth, sentence-by-sentence karaoke subtitles, and male voice-over from **[Piper](https://github.com/rhasspy/piper)**, an open-source neural TTS engine that runs locally. Watch it in the browser or export an MP4 (720p by default; set `RENDER_SCALE=1` for 1080p).
 
 ```
  logs ──► parsers ──► normalized records ──► rule engine + correlation ──► Claude (structured output)
@@ -29,7 +29,7 @@ During an incident, analysts face thousands of log lines across many tools. The 
 ## Quick start (Windows)
 
 ```powershell
-# one time: downloads portable Node 24, Piper + 3 voices into .tools/, installs deps, builds the UI
+# one time: downloads portable Node 24, Piper + a male voice (Ryan) into .tools/, installs deps, builds the UI
 powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
 
 # optional: enable Claude
@@ -40,7 +40,7 @@ powershell -ExecutionPolicy Bypass -File scripts\start.ps1
 # open http://localhost:8000
 ```
 
-If Node is already installed you can just run `npm install`, `npm run build` and `npm start`. TTS needs the Piper binary and voices (run `setup.ps1`, or point `PIPER_PATH` / `PIPER_VOICES` at your own install).
+If Node is already installed you can just run `npm install`, `npm run build` and `npm start`. TTS needs the Piper binary and voices (run `setup.ps1`, or point `PIPER_PATH` / `PIPER_VOICES` at your own install).  Narration uses Ryan (medium) by default; set `PIPER_VOICE=en_US-ryan-high` for a richer but ~5x slower voice (download it into `.tools/voices`).
 
 Dev mode with hot reload: `npm run dev` (UI on :5173, proxied to the API on :8000).
 
@@ -64,9 +64,9 @@ Regenerate them with `npm run samples`. Try the engine from the CLI with `npx ts
 server/            Express API on :8000 (parsing, analysis, TTS, MP4 rendering)
   parsers.ts       universal log parser
   analysis/        detect.ts (rules) · narrate.ts (3-level narratives) · claude.ts (AI) · env.ts
-  tts.ts           Piper narration (one voice per audience, cached)
+  tts.ts           Piper narration (male voice, cached)
   render.ts        Remotion server-side MP4 rendering
-video/             Remotion composition (network stage, cards, captions, timeline bar)
+video/             Remotion composition (timeline camera, event cards, per-phase animations, subtitles)
 web/               React UI (import, aggregate, interactive timeline, video player)
 shared/            types, theme, icons shared by server, UI and video
 samples/           generated demo datasets

@@ -47,9 +47,7 @@ $Voices = Join-Path $Tools 'voices'
 New-Item -ItemType Directory -Force $Voices | Out-Null
 $hf = 'https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/en/en_US'
 foreach ($v in @(
-  @{ id = 'en_US-lessac-medium'; path = 'lessac/medium' },
-  @{ id = 'en_US-ryan-medium';   path = 'ryan/medium' },
-  @{ id = 'en_US-amy-medium';    path = 'amy/medium' }
+  @{ id = 'en_US-ryan-medium'; path = 'ryan/medium' }
 )) {
   Get-File "$hf/$($v.path)/$($v.id).onnx"      (Join-Path $Voices "$($v.id).onnx")
   Get-File "$hf/$($v.path)/$($v.id).onnx.json" (Join-Path $Voices "$($v.id).onnx.json")

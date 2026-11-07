@@ -60,7 +60,7 @@ export type IconName =
   | 'laptop' | 'server' | 'database' | 'building' | 'skull' | 'mail' | 'key' | 'lock' | 'bug' | 'search' | 'file'
   | 'eraser' | 'crown' | 'cpu' | 'archive' | 'signal' | 'shield' | 'check' | 'globe' | 'alert' | 'clock' | 'upload'
   | 'share' | 'radar' | 'cloud' | 'play' | 'film' | 'layers' | 'plug' | 'zoom-in' | 'zoom-out' | 'maximize' | 'terminal'
-  | 'user' | 'download' | 'sparkles' | 'x' | 'chevron-right' | 'chevron-left' | 'pause' | 'list' | 'trash';
+  | 'fit' | 'minimize' | 'user' | 'download' | 'sparkles' | 'x' | 'chevron-right' | 'chevron-left' | 'pause' | 'list' | 'trash';
 
 /** Lucide-style 24x24 stroke icons (ISC-licensed shapes, simplified). */
 export const ICON_PATHS: Record<IconName, string> = {
@@ -98,6 +98,8 @@ export const ICON_PATHS: Record<IconName, string> = {
   'zoom-out': 'M3 11a8 8 0 1 0 16 0a8 8 0 1 0-16 0M21 21l-4.3-4.3M8 11h6',
   maximize: 'M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3',
   terminal: 'M4 17l6-6-6-6M12 19h8',
+  fit: 'M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4',
+  minimize: 'M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3',
   user: 'M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2M8 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0',
   download: 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3',
   sparkles: 'M9.9 15.5A2 2 0 0 0 8.5 14.1L2.4 12.5a.5.5 0 0 1 0-1l6.1-1.6A2 2 0 0 0 9.9 8.5l1.6-6.1a.5.5 0 0 1 1 0l1.6 6.1a2 2 0 0 0 1.4 1.4l6.1 1.6a.5.5 0 0 1 0 1l-6.1 1.6a2 2 0 0 0-1.4 1.4l-1.6 6.1a.5.5 0 0 1-1 0zM20 3v4M22 5h-4',

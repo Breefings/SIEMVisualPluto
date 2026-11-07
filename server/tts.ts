@@ -1,6 +1,6 @@
 /**
  * Narration with Piper (https://github.com/rhasspy/piper): a fast, local,
- * open-source (MIT) neural text-to-speech engine. One voice per audience level.
+ * open-source (MIT) neural text-to-speech engine. One male narrator (Ryan) for every level.
  */
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -11,15 +11,15 @@ import type { Level, Scene } from '../shared/types.ts';
 import { listVoices, piperBinary, voicesDir } from './paths.ts';
 import { caseDir } from './store.ts';
 
-const PREFERRED: Record<Level, string[]> = {
-  layman: ['en_US-amy-medium', 'en_US-lessac-medium'],
-  analyst: ['en_US-lessac-medium', 'en_US-amy-medium'],
-  senior: ['en_US-ryan-medium', 'en_US-lessac-medium'],
-};
+// One male narrator for every audience. Ryan (medium) synthesizes a whole story ~5x faster than Ryan (high),
+// which takes minutes per level on a laptop CPU; set PIPER_VOICE=en_US-ryan-high to trade speed for quality.
+const MALE = ['en_US-ryan-medium', 'en_US-ryan-high', 'en_US-hfc_male-medium', 'en_US-joe-medium', 'en_US-john-medium'];
 
-export function voiceFor(level: Level): string | null {
+export function voiceFor(_level: Level): string | null {
   const have = listVoices();
-  return PREFERRED[level].find((v) => have.includes(v)) ?? have[0] ?? null;
+  const want = process.env.PIPER_VOICE;
+  if (want && have.includes(want)) return want;
+  return MALE.find((v) => have.includes(v)) ?? have[0] ?? null;
 }
 
 export function ttsAvailable() {

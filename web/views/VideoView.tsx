@@ -75,8 +75,7 @@ export function VideoView({ c, level, status }: { c: CaseSummary; level: Level; 
         {!props ? (
           <div className="video-loading">
             <div className="spinner" />
-            <div>Generating narration with Piper TTS for the <b>{L.label}</b> story…</div>
-            <div className="muted small">Open-source neural voice, running locally. Cached after the first run.</div>
+            <div>Preparing voice-over…</div>
           </div>
         ) : (
           <Player
@@ -96,14 +95,14 @@ export function VideoView({ c, level, status }: { c: CaseSummary; level: Level; 
             acknowledgeRemotionLicense
           />
         )}
-        {err && <div className="warnbox"><Icon name="alert" size={14} /> Narration unavailable ({err}). Playing with captions only.</div>}
-        {status && status.tts.engine !== 'piper' && <div className="warnbox"><Icon name="alert" size={14} /> Piper TTS not installed. Run <code>scripts/setup.ps1</code> to enable the voice-over.</div>}
+        {err && <div className="warnbox" title={err}><Icon name="alert" size={14} /> No voice-over, captions only.</div>}
+        {status && status.tts.engine !== 'piper' && <div className="warnbox"><Icon name="alert" size={14} /> No voice installed. Run <code>scripts/setup.ps1</code>.</div>}
       </div>
 
       <aside className="video-side">
         <div className="card">
           <h3><Icon name="film" size={16} /> {inc.stories[level].title}</h3>
-          <p className="muted small">{L.label} cut · {scenes ? `${Math.round(totalFrames(scenes) / FPS)}s` : '…'} · {scenes?.length ?? 0} scenes · narrated by Piper ({level === 'layman' ? 'Amy' : level === 'analyst' ? 'Lessac' : 'Ryan'})</p>
+          <p className="muted small">{L.label} · {scenes ? `${Math.round(totalFrames(scenes) / FPS)}s` : '…'}</p>
           <div className="chapters">
             {tl.map(({ scene, from }) => {
               const e = scene.eventId ? evById.get(scene.eventId) : undefined;
@@ -120,7 +119,6 @@ export function VideoView({ c, level, status }: { c: CaseSummary; level: Level; 
         </div>
         <div className="card">
           <h3><Icon name="download" size={16} /> Export</h3>
-          <p className="muted small">Render an MP4 (720p by default, RENDER_SCALE=1 for 1080p) with Remotion on the server: motion graphics plus voice-over, ready to share.</p>
           {job?.state === 'running' ? (
             <>
               <div className="progress"><div style={{ width: `${Math.round(job.progress * 100)}%` }} /></div>
@@ -135,7 +133,7 @@ export function VideoView({ c, level, status }: { c: CaseSummary; level: Level; 
             <button className="btn primary" disabled={!scenes} onClick={() => api.render(c.id, level).then(setJob).catch((e) => setErr(e.message))}><Icon name="film" size={14} /> Render MP4</button>
           )}
           {job?.state === 'error' && <div className="error small">{job.error}</div>}
-          <button className="btn ghost" style={{ marginTop: 10 }} disabled={!scenes} onClick={transcript}><Icon name="file" size={14} /> Download transcript</button>
+          <button className="btn ghost" style={{ marginTop: 10 }} disabled={!scenes} onClick={transcript}><Icon name="file" size={14} /> Transcript</button>
         </div>
       </aside>
     </div>

@@ -46,7 +46,7 @@ export function App() {
           <div className="logo"><Icon name="layers" size={18} color="#fff" /></div>
           <span>Seen<b>Visualizer</b></span>
         </div>
-        <div className="urlbar"><Icon name="globe" size={14} /> localhost:8000/{view === 'timeline' && active ? `cases/${active.id}` : view}</div>
+        <div className="grow" />
         <div className="status-pills">
           <span className={`pill ${status?.claude ? 'ok' : 'warn'}`} title={status?.claude ? 'Claude analyzes your logs' : 'Set ANTHROPIC_API_KEY to enable Claude; the offline rule engine is used meanwhile'}>
             <Icon name="sparkles" size={13} /> {status ? (status.claude ? status.model : 'Offline engine') : '…'}
@@ -58,20 +58,20 @@ export function App() {
       </header>
 
       <nav className="sidebar">
-        <NavItem icon="upload" label="Import logs" sub="CSV, JSON, syslog, txt…" active={view === 'import'} onClick={() => setView('import')} />
-        <NavItem icon="plug" label="Aggregate logs" sub="Docker, K8s, Prometheus…" active={view === 'aggregate'} onClick={() => setView('aggregate')} badge="soon" />
-        <NavItem icon="film" label="View timeline" sub="Interactive · Video" active={view === 'timeline'} onClick={() => setView('timeline')} disabled={!active} />
+        <NavItem icon="upload" label="Import" active={view === 'import'} onClick={() => setView('import')} />
+        <NavItem icon="plug" label="Connect" active={view === 'aggregate'} onClick={() => setView('aggregate')} badge="soon" />
+        <NavItem icon="film" label="Timeline" active={view === 'timeline'} onClick={() => setView('timeline')} disabled={!active} />
 
-        <div className="side-section">Investigations</div>
+        <div className="side-section">Cases</div>
         <div className="case-list">
-          {cases.length === 0 && <div className="muted small pad">No cases yet. Import logs or load a sample.</div>}
+          {cases.length === 0 && <div className="muted small pad">No cases yet</div>}
           {cases.map((c) => (
             <button key={c.id} className={`case-item ${c.id === activeId ? 'active' : ''}`} onClick={() => { setActiveId(c.id); setView('timeline'); }}>
               <span className="sev-dot" style={{ background: c.incident ? SEV_COLOR[c.incident.severity] : '#475569' }} />
               <span className="case-text">
                 <span className="case-name">{c.incident?.title && c.analysis.state === 'done' ? c.incident.title : c.name}</span>
                 <span className="case-meta">
-                  {c.analysis.state === 'running' ? `Analyzing… ${Math.round(c.analysis.progress * 100)}%` : `${c.recordCount.toLocaleString()} records · ${c.sources.length} sources`}
+                  {c.analysis.state === 'running' ? `${Math.round(c.analysis.progress * 100)}%` : `${c.recordCount.toLocaleString()} records`}
                 </span>
               </span>
               <span className="case-del" title="Delete case" onClick={(e) => { e.stopPropagation(); api.remove(c.id).then(refresh); if (c.id === activeId) setActiveId(null); }}>
@@ -91,11 +91,11 @@ export function App() {
   );
 }
 
-function NavItem({ icon, label, sub, active, onClick, badge, disabled }: { icon: Parameters<typeof Icon>[0]['name']; label: string; sub: string; active: boolean; onClick: () => void; badge?: string; disabled?: boolean }) {
+function NavItem({ icon, label, active, onClick, badge, disabled }: { icon: Parameters<typeof Icon>[0]['name']; label: string; active: boolean; onClick: () => void; badge?: string; disabled?: boolean }) {
   return (
     <button className={`nav-item ${active ? 'active' : ''}`} onClick={onClick} disabled={disabled}>
       <span className="nav-icon"><Icon name={icon} size={18} /></span>
-      <span className="nav-text"><span>{label}</span><small>{sub}</small></span>
+      <span className="nav-text"><span>{label}</span></span>
       {badge && <span className="badge">{badge}</span>}
     </button>
   );
@@ -105,8 +105,6 @@ function Empty({ onGo }: { onGo: () => void }) {
   return (
     <div className="empty">
       <Icon name="film" size={40} />
-      <h2>No investigation selected</h2>
-      <p>Import some logs or load a sample dataset to build a timeline.</p>
       <button className="btn primary" onClick={onGo}>Import logs</button>
     </div>
   );

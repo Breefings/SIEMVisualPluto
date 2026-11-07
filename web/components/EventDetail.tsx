@@ -20,8 +20,7 @@ export function EventDetail({ caseId, event, level, incident, events, onSelect }
       <div className="panel detail empty-detail">
         <Icon name="chevron-left" size={22} />
         <h3>Pick an event</h3>
-        <p className="muted">Click a marker on the timeline or a step in the story. Use ← → to walk through the attack.</p>
-        {first && <button className="btn primary" onClick={() => onSelect(first.id)}><Icon name="play" size={14} /> Start at the beginning</button>}
+        {first && <button className="btn primary" onClick={() => onSelect(first.id)}><Icon name="play" size={14} /> Start</button>}
       </div>
     );
   }
@@ -68,7 +67,7 @@ export function EventDetail({ caseId, event, level, incident, events, onSelect }
 
       <div className="evidence">
         <button className="sub link" onClick={() => setShowLogs((s) => !s)}>
-          <Icon name="terminal" size={13} /> {level === 'layman' ? 'Show the original log lines' : `Evidence (${event.evidence.length} log lines)`} <Icon name={showLogs ? 'chevron-left' : 'chevron-right'} size={12} />
+          <Icon name="terminal" size={13} /> Evidence ({event.evidence.length}) <Icon name={showLogs ? 'chevron-left' : 'chevron-right'} size={12} />
         </button>
         {showLogs && (
           <div className="loglines">
