@@ -3,6 +3,7 @@ import type { CaseSummary, Status } from '../shared/types.ts';
 import { Icon } from '../shared/Icon.tsx';
 import { SEV_COLOR } from '../shared/theme.ts';
 import { api } from './api.ts';
+import { Halftone } from './components/Halftone.tsx';
 import { AggregateView } from './views/AggregateView.tsx';
 import { ImportView } from './views/ImportView.tsx';
 import { TimelineView } from './views/TimelineView.tsx';
@@ -41,6 +42,7 @@ export function App() {
 
   return (
     <div className="app">
+      <Halftone />
       <header className="topbar">
         <div className="brand">
           <div className="logo" aria-hidden><span>S</span><span>E</span><span>E</span><span>N</span></div>

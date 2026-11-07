@@ -128,7 +128,11 @@ h3 svg, .btn svg, .pill svg { flex: 0 0 auto; }
 .case-del:hover { color: var(--red); }
 .sev-dot { width: 6px; height: 6px; border-radius: 50%; flex: 0 0 auto; }
 
-.main { overflow-y: auto; overflow-x: hidden; }
+.main { position: relative; z-index: 1; overflow-y: auto; overflow-x: hidden; }
+.sidebar { z-index: 1; }
+
+/* halftone page background: fixed to the bottom third of the screen, behind all content */
+.halftone { position: fixed; left: 0; bottom: 0; z-index: 0; pointer-events: none; display: block; }
 .page { padding: 56px 64px 72px; max-width: 1360px; margin: 0 auto; }
 .page-head { position: relative; margin-bottom: 44px; padding-bottom: 26px; }
 .page-head::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 9px; background: var(--ruler-h); opacity: 0.6; }
