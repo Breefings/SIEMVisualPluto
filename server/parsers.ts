@@ -170,6 +170,23 @@ function parseCsv(text: string, source: string): Draft[] {
   const rows = parseCsvRows(text, delim);
   if (rows.length < 2) return [];
   const header = rows[0].map((h) => h.trim());
+  // SIEM exports (Splunk `_raw`, Elastic `event.original`, generic `raw`) carry the untouched original
+  // line: parse that exactly as if it came from its original file, so no detail is lost in the CSV.
+  const rawCol = header.findIndex((h) => /^(_raw|raw|event\.original|raw_log)$/i.test(h));
+  if (rawCol >= 0) {
+    const out: Draft[] = [];
+    for (const r of rows.slice(1)) {
+      const raw = (r[rawCol] ?? '').trim();
+      if (!raw) continue;
+      let d: Draft | null = null;
+      if (raw.startsWith('{')) {
+        try { d = fromFields(flatten(JSON.parse(raw)), raw, source, 'jsonl'); } catch { /* not JSON */ }
+      }
+      if (!d) d = parseLine(raw, source);
+      if (d) out.push(d);
+    }
+    return out;
+  }
   const lines = text.split(/\r?\n/);
   return rows.slice(1).flatMap((r, i) => {
     const f: Record<string, string> = {};
