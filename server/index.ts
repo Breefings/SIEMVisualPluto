@@ -1,5 +1,5 @@
 /**
- * SeenVisualizer API + static web server on http://localhost:8000
+ * SIEMVisual API + static web server on http://localhost:8000
  */
 import express from 'express';
 import multer from 'multer';
@@ -272,8 +272,17 @@ function runAnalysis(c: Case, engine: string) {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`\n  SeenVisualizer  →  http://localhost:${PORT}`);
+// Express 5 calls this callback on listen errors too, so check before announcing anything.
+app.listen(PORT, (err?: NodeJS.ErrnoException) => {
+  if (err) {
+    console.error(
+      err.code === 'EADDRINUSE'
+        ? `\n  Port ${PORT} is already in use: another copy of SIEMVisual (or another app) is running.\n  Close that window first (or set PORT=8001 in .env), then start again.\n`
+        : `\n  Could not start the server: ${err.message}\n`,
+    );
+    process.exit(1);
+  }
+  console.log(`\n  SIEMVisual  →  http://localhost:${PORT}`);
   console.log(`  AI engine: ${claudeAvailable() ? `Claude (${MODEL})` : 'offline rule engine (set ANTHROPIC_API_KEY to enable Claude)'}`);
   console.log(`  Narration: ${ttsAvailable() ? `Piper TTS (${listVoices().join(', ')})` : 'none (run scripts/setup.ps1)'}\n`);
 });

@@ -333,7 +333,7 @@ function Terminal({ lines, f }: { lines: string[]; f: number }) {
 export function Lettermark({ size = 22 }: { size?: number }) {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', width: size * 2.1, lineHeight: 0.95, fontFamily: FONT, fontWeight: 700, fontSize: size, letterSpacing: size * 0.08, color: INK.white, textAlign: 'center' }}>
-      <span>S</span><span>E</span><span>E</span><span>N</span>
+      <span>S</span><span>I</span><span>E</span><span>M</span>
     </div>
   );
 }

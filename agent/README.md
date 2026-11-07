@@ -1,6 +1,6 @@
-# SeenVisualizer agent
+# SIEMVisual agent
 
-`seen-agent.mjs` is a single file with no dependencies. It records hardware utilization on the machine it runs on and hands it to the SeenVisualizer server when the server asks. It also serves that machine's own event logs, so a Windows host doesn't need SSH.
+`seen-agent.mjs` is a single file with no dependencies. It records hardware utilization on the machine it runs on and hands it to the SIEMVisual server when the server asks. It also serves that machine's own event logs, so a Windows host doesn't need SSH.
 
 **What it records** every 5 seconds:
 
@@ -30,16 +30,16 @@ node seen-agent.mjs                 # port 9870, 5 s interval, 72 h history
 node seen-agent.mjs --port 9870 --interval 5 --retention 72 --data /var/lib/seen-agent
 ```
 
-On first start the agent generates an access token, prints it, and saves it to `seen-agent-data/token.txt`. On the Connect page, add a **SeenVisualizer agent** source with the machine's IP address and that token.
+On first start the agent generates an access token, prints it, and saves it to `seen-agent-data/token.txt`. On the Connect page, add a **SIEMVisual agent** source with the machine's IP address and that token.
 
-Only allow the agent's port from the SeenVisualizer server, for example with a firewall rule. The token protects the endpoints, but the traffic is plain HTTP.
+Only allow the agent's port from the SIEMVisual server, for example with a firewall rule. The token protects the endpoints, but the traffic is plain HTTP.
 
 ### As a service on Linux (systemd)
 
 ```ini
 # /etc/systemd/system/seen-agent.service
 [Unit]
-Description=SeenVisualizer agent
+Description=SIEMVisual agent
 After=network-online.target
 
 [Service]
@@ -61,7 +61,7 @@ Run this in an elevated PowerShell. SYSTEM can read the Security event log.
 ```powershell
 $a = New-ScheduledTaskAction -Execute "node.exe" -Argument "C:\seen-agent\seen-agent.mjs --data C:\seen-agent\data"
 $t = New-ScheduledTaskTrigger -AtStartup
-Register-ScheduledTask -TaskName "SeenVisualizer agent" -Action $a -Trigger $t -User "SYSTEM" -RunLevel Highest
-Start-ScheduledTask -TaskName "SeenVisualizer agent"
-New-NetFirewallRule -DisplayName "SeenVisualizer agent" -Direction Inbound -Protocol TCP -LocalPort 9870 -RemoteAddress <server-ip> -Action Allow
+Register-ScheduledTask -TaskName "SIEMVisual agent" -Action $a -Trigger $t -User "SYSTEM" -RunLevel Highest
+Start-ScheduledTask -TaskName "SIEMVisual agent"
+New-NetFirewallRule -DisplayName "SIEMVisual agent" -Direction Inbound -Protocol TCP -LocalPort 9870 -RemoteAddress <server-ip> -Action Allow
 ```

@@ -1,4 +1,4 @@
-# SeenVisualizer one-shot setup (Windows, no admin required).
+# SIEMVisual one-shot setup (Windows, no admin required).
 # Downloads a portable Node.js + the open-source Piper TTS engine and voice
 # models into .tools/ (git-ignored), then installs npm deps and builds the UI.
 #

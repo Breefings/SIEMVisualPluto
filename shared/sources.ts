@@ -43,7 +43,7 @@ export const KINDS: KindInfo[] = [
     kind: 'docker', label: 'Docker', icon: 'layers',
     what: 'Container stdout/stderr and daemon events (create, start, exec, kill).',
     fields: ['via', 'tls', 'insecure', 'username', 'password', 'privateKey', 'sudo'],
-    setup: 'Engine API: the daemon must listen on TCP (2375, or 2376 with TLS). Plain 2375 is root access with no password, so only expose it on a trusted network. Safer: choose SSH and SeenVisualizer runs the docker CLI on the host.',
+    setup: 'Engine API: the daemon must listen on TCP (2375, or 2376 with TLS). Plain 2375 is root access with no password, so only expose it on a trusted network. Safer: choose SSH and SIEMVisual runs the docker CLI on the host.',
   },
   {
     kind: 'kubernetes', label: 'Kubernetes', icon: 'cloud',
@@ -73,10 +73,10 @@ export const KINDS: KindInfo[] = [
     kind: 'windows', label: 'Windows host', icon: 'laptop',
     what: 'Event logs: Security, System, Application, Sysmon, PowerShell, Defender and RDP sessions.',
     fields: ['username', 'password', 'privateKey'],
-    setup: 'Uses the built-in OpenSSH Server (Settings → Optional features → OpenSSH Server, then `Start-Service sshd`). The account must be an administrator to read the Security log. No SSH? Install the SeenVisualizer agent instead; it serves the same event logs.',
+    setup: 'Uses the built-in OpenSSH Server (Settings → Optional features → OpenSSH Server, then `Start-Service sshd`). The account must be an administrator to read the Security log. No SSH? Install the SIEMVisual agent instead; it serves the same event logs.',
   },
   {
-    kind: 'agent', label: 'SeenVisualizer agent', icon: 'cpu',
+    kind: 'agent', label: 'SIEMVisual agent', icon: 'cpu',
     what: 'Hardware utilization history (CPU, RAM, GPU, disk usage, disk read/write, network) plus the host\'s own event logs.',
     fields: ['token'],
     setup: 'Run the agent on the machine (`node seen-agent.mjs`). It samples every 5 s, keeps 72 h of history, and prints its access token on first start. Download it from the button below.',

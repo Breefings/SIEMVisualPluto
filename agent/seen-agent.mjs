@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * SeenVisualizer agent: records hardware utilization on this machine and serves it (plus the
- * machine's own event logs) to the SeenVisualizer server when asked. Zero dependencies, Node >= 18.
+ * SIEMVisual agent: records hardware utilization on this machine and serves it (plus the
+ * machine's own event logs) to the SIEMVisual server when asked. Zero dependencies, Node >= 18.
  *
  *   node seen-agent.mjs [--port 9870] [--interval 5] [--retention 72] [--data ./seen-agent-data] [--token X]
  *
@@ -350,7 +350,7 @@ startGpu();
 sample();
 setInterval(sample, INTERVAL * 1000);
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`SeenVisualizer agent ${VERSION} on ${os.hostname()} - listening on :${PORT}, sampling every ${INTERVAL}s, keeping ${RETENTION_H}h`);
+  console.log(`SIEMVisual agent ${VERSION} on ${os.hostname()} - listening on :${PORT}, sampling every ${INTERVAL}s, keeping ${RETENTION_H}h`);
   console.log(`Data: ${DATA}`);
   console.log(`Token: ${TOKEN}   (paste this into the agent source on the Connect page)`);
 });

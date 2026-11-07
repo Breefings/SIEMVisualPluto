@@ -45,8 +45,8 @@ export function App() {
       <Halftone />
       <header className="topbar">
         <div className="brand">
-          <div className="logo" aria-hidden><span>S</span><span>E</span><span>E</span><span>N</span></div>
-          <span className="brand-name"><b>Seen</b>Visualizer</span>
+          <div className="logo" aria-hidden><span>S</span><span>I</span><span>E</span><span>M</span></div>
+          <span className="brand-name"><b>SIEM</b>Visual</span>
         </div>
         <div className="grow" />
         <div className="status-pills">

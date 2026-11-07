@@ -1,9 +1,9 @@
-# SeenVisualizer
+# SIEMVisual
 
 **Turn a pile of security logs into a story anyone can follow.**
 Built for Pluto Hacks 2026 (AI × Cybersecurity).
 
-During an incident, analysts face thousands of log lines across many tools. The question everyone actually asks is simple: *what happened, in what order, and how bad is it?* SeenVisualizer:
+During an incident, analysts face thousands of log lines across many tools. The question everyone actually asks is simple: *what happened, in what order, and how bad is it?* SIEMVisual:
 
 1. **Ingests logs from anywhere** (CSV, TSV, JSON, JSONL, syslog, Apache/Nginx/Squid access logs, key=value firewall logs, free text) and puts them on one UTC clock.
 2. **Reconstructs the attack** with an AI pipeline. About 20 MITRE ATT&CK-mapped detection rules plus correlation follow the attacker from host to host. Then **Claude** (`claude-opus-5-5`) confirms, corrects and extends the findings into a structured incident.
@@ -85,7 +85,7 @@ On the **Connect** page you add each machine by IP address. The port fills in wi
 | Proxmox VE | SSH (22) | Host journal, PVE task log (VM start/stop/backup/migrate), cluster log, PVE firewall log, open connections |
 | Linux | SSH (22) | systemd journal (or auth.log/syslog), open connections |
 | Windows | Built-in OpenSSH Server (22), running `Get-WinEvent` | Security, System, Application, Sysmon, PowerShell, Defender and RDP event logs |
-| SeenVisualizer agent | HTTP (9870) with a token | CPU, RAM, GPU, disk usage, disk read/write and network history, plus the host's own event logs. See [agent/README.md](agent/README.md) |
+| SIEMVisual agent | HTTP (9870) with a token | CPU, RAM, GPU, disk usage, disk read/write and network history, plus the host's own event logs. See [agent/README.md](agent/README.md) |
 
 **OpenWrt doesn't log network activity by default.** The **Enable traffic logging** button (opt-in) turns on DNS-query logging, WAN firewall logging and per-connection byte counters, and enlarges the log buffer.
 

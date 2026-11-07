@@ -5,7 +5,7 @@ import { FPS, HEIGHT, totalFrames, WIDTH, type VideoProps } from './timing.ts';
 const placeholder: VideoProps = {
   level: 'layman',
   audioBase: '',
-  scenes: [{ id: 'intro', kind: 'intro', heading: 'No incident loaded', narration: 'Render this composition with inputProps from the SeenVisualizer server.' }],
+  scenes: [{ id: 'intro', kind: 'intro', heading: 'No incident loaded', narration: 'Render this composition with inputProps from the SIEMVisual server.' }],
   incident: {
     title: 'No incident loaded', summary: '', severity: 'info', startTs: 0, endTs: 1, engine: 'heuristic', assets: [], users: [], events: [],
     stories: {} as VideoProps['incident']['stories'], stats: { records: 0, sources: 0, flagged: 0 },

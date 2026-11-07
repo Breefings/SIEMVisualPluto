@@ -1,4 +1,4 @@
-/** SeenVisualizer agent: hardware-utilization history + the host's own event logs, pulled over HTTP. */
+/** SIEMVisual agent: hardware-utilization history + the host's own event logs, pulled over HTTP. */
 import type { SourceConfig } from '../../shared/sources.ts';
 import { httpJson, iso, journalToText, jsonl, normalizeWinEvents, portOf, slug, type Collected, type Window } from './util.ts';
 
