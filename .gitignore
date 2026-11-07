@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.tools/
+data/
+.env
+npm-debug.log*
+/*.log
+.remotion/

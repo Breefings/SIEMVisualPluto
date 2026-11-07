@@ -1,0 +1,46 @@
+TimeCreated,Computer,EventID,Level,Account,LogonType,SourceIP,Message
+2026-10-14T07:54:38.271Z,WS-SALES-14,4624,Information,ACME\l.nguyen,2,-,An account was successfully logged on. Logon Type 2 (Interactive). Account: l.nguyen
+2026-10-14T07:59:20.903Z,WS-OPS-05,4624,Information,ACME\d.kowalski,2,-,An account was successfully logged on. Logon Type 2 (Interactive). Account: d.kowalski
+2026-10-14T08:03:30.762Z,WS-ACCT-07,4624,Information,ACME\j.alvarez,2,-,An account was successfully logged on. Logon Type 2 (Interactive). Account: j.alvarez
+2026-10-14T08:05:24.907Z,WS-SALES-11,4624,Information,ACME\r.okafor,2,-,An account was successfully logged on. Logon Type 2 (Interactive). Account: r.okafor
+2026-10-14T08:07:18Z,FS-01,4624,Information,ACME\m.chen,3,10.10.20.52,An account was successfully logged on. Logon Type 3 (Network). Account: m.chen
+2026-10-14T08:14:03Z,WS-SALES-14,4625,Information,ACME\l.nguyen,2,-,An account failed to log on. Failure reason: Unknown user name or bad password.
+2026-10-14T08:14:21Z,WS-SALES-14,4624,Information,ACME\l.nguyen,2,-,An account was successfully logged on. Logon Type 2 (Interactive). Account: l.nguyen
+2026-10-14T08:16:17.409Z,WS-IT-01,4624,Information,ACME\a.patel,2,-,An account was successfully logged on. Logon Type 2 (Interactive). Account: a.patel
+2026-10-14T08:16:18.502Z,WS-HR-02,4624,Information,ACME\m.chen,2,-,An account was successfully logged on. Logon Type 2 (Interactive). Account: m.chen
+2026-10-14T08:31:35Z,FS-01,4624,Information,ACME\d.kowalski,3,10.10.20.45,An account was successfully logged on. Logon Type 3 (Network). Account: d.kowalski
+2026-10-14T08:39:09Z,DC-01,4624,Information,ACME\j.alvarez,3,10.10.20.37,An account was successfully logged on. Logon Type 3 (Network). Account: j.alvarez
+2026-10-14T09:08:00Z,DC-01,4624,Information,ACME\d.kowalski,3,10.10.20.45,An account was successfully logged on. Logon Type 3 (Network). Account: d.kowalski
+2026-10-14T09:19:13Z,FS-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T09:37:40Z,DC-01,4624,Information,ACME\d.kowalski,3,10.10.20.45,An account was successfully logged on. Logon Type 3 (Network). Account: d.kowalski
+2026-10-14T09:51:10Z,DC-01,4624,Information,ACME\d.kowalski,3,10.10.20.45,An account was successfully logged on. Logon Type 3 (Network). Account: d.kowalski
+2026-10-14T09:54:47Z,FS-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T10:39:39Z,FS-01,4624,Information,ACME\l.nguyen,3,10.10.20.64,An account was successfully logged on. Logon Type 3 (Network). Account: l.nguyen
+2026-10-14T10:58:10Z,DC-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T12:18:04Z,FS-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T12:31:05Z,FS-01,4624,Information,ACME\r.okafor,3,10.10.20.61,An account was successfully logged on. Logon Type 3 (Network). Account: r.okafor
+2026-10-14T12:38:26Z,DC-01,4624,Information,ACME\r.okafor,3,10.10.20.61,An account was successfully logged on. Logon Type 3 (Network). Account: r.okafor
+2026-10-14T12:51:35Z,DC-01,4624,Information,ACME\d.kowalski,3,10.10.20.45,An account was successfully logged on. Logon Type 3 (Network). Account: d.kowalski
+2026-10-14T13:22:41Z,FS-01,4624,Information,ACME\j.alvarez,3,10.10.20.37,An account was successfully logged on. Logon Type 3 (Network). Account: j.alvarez
+2026-10-14T14:02:07Z,WS-HR-02,4648,Information,ACME\j.alvarez,-,10.10.20.37,A logon was attempted using explicit credentials. Target account: ACME\svc_backup. Target server: WS-HR-02
+2026-10-14T14:02:09Z,WS-HR-02,4624,Information,ACME\svc_backup,3,10.10.20.37,An account was successfully logged on. Logon Type 3 (Network). Account: svc_backup. Source Network Address: 10.10.20.37
+2026-10-14T14:02:11Z,WS-HR-02,7045,Information,ACME\svc_backup,-,-,A service was installed in the system. Service Name: PSEXESVC. Service File Name: %SystemRoot%\PSEXESVC.exe
+2026-10-14T14:23:43Z,FS-01,4624,Information,ACME\l.nguyen,3,10.10.20.64,An account was successfully logged on. Logon Type 3 (Network). Account: l.nguyen
+2026-10-14T14:49:00Z,DC-01,4624,Information,ACME\r.okafor,3,10.10.20.61,An account was successfully logged on. Logon Type 3 (Network). Account: r.okafor
+2026-10-14T15:10:31Z,FS-01,4624,Information,ACME\svc_backup,10,10.10.20.52,An account was successfully logged on. Logon Type 10 (RemoteInteractive). Account: svc_backup. Source Network Address: 10.10.20.52
+2026-10-14T15:13:29Z,DC-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T15:16:11Z,DC-01,4624,Information,ACME\l.nguyen,3,10.10.20.64,An account was successfully logged on. Logon Type 3 (Network). Account: l.nguyen
+2026-10-14T15:44:07Z,FS-01,4624,Information,ACME\r.okafor,3,10.10.20.61,An account was successfully logged on. Logon Type 3 (Network). Account: r.okafor
+2026-10-14T15:53:26Z,DC-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T16:04:12Z,FS-01,7045,Information,ACME\svc_backup,-,-,A service was installed in the system. Service Name: WindowsUpdateHelper. Service File Name: C:\ProgramData\wuhelper.exe. Service Start Type: auto start. Account: LocalSystem
+2026-10-14T16:04:40Z,FS-01,4698,Information,ACME\svc_backup,-,-,A scheduled task was created. Task Name: \Microsoft\Windows\UpdateOrchestrator\RefreshCache. Action: C:\ProgramData\wuhelper.exe -k. Trigger: every 30 minutes
+2026-10-14T16:05:09Z,FS-01,4720,Information,ACME\svc_backup,-,-,A user account was created. New Account: support_adm
+2026-10-14T16:05:14Z,FS-01,4732,Information,ACME\svc_backup,-,-,A member was added to a security-enabled local group. Member: support_adm. Group: Administrators
+2026-10-14T16:24:24Z,FS-01,4624,Information,ACME\j.alvarez,3,10.10.20.37,An account was successfully logged on. Logon Type 3 (Network). Account: j.alvarez
+2026-10-14T16:27:02Z,FS-01,4624,Information,ACME\j.alvarez,3,10.10.20.37,An account was successfully logged on. Logon Type 3 (Network). Account: j.alvarez
+2026-10-14T16:45:31Z,WS-ACCT-07,1102,Warning,ACME\j.alvarez,-,-,The audit log was cleared. Subject: j.alvarez
+2026-10-14T16:48:33Z,DC-01,4624,Information,ACME\r.okafor,3,10.10.20.61,An account was successfully logged on. Logon Type 3 (Network). Account: r.okafor
+2026-10-14T17:18:41Z,DC-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T17:31:53Z,FS-01,4624,Information,ACME\m.chen,3,10.10.20.52,An account was successfully logged on. Logon Type 3 (Network). Account: m.chen
+2026-10-14T17:49:18Z,FS-01,4624,Information,ACME\a.patel,3,10.10.20.10,An account was successfully logged on. Logon Type 3 (Network). Account: a.patel
+2026-10-14T18:24:25Z,DC-01,4624,Information,ACME\l.nguyen,3,10.10.20.64,An account was successfully logged on. Logon Type 3 (Network). Account: l.nguyen

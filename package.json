@@ -1,0 +1,43 @@
+{
+  "name": "seenvisualizer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered security log timeline visualizer: interactive timelines and narrated motion-graphics videos at three levels of abstraction.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"tsx watch server/index.ts\" \"vite --config vite.config.ts\"",
+    "build": "vite build --config vite.config.ts",
+    "start": "tsx server/index.ts",
+    "samples": "tsx scripts/gen-samples.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "@remotion/bundler": "4.0.541",
+    "@remotion/player": "4.0.541",
+    "@remotion/renderer": "4.0.541",
+    "d3": "^7.9.2",
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "4.0.541",
+    "tsx": "^4.23.15",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "concurrently": "^10.0.6",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.6"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}
