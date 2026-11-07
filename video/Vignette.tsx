@@ -1,12 +1,12 @@
 import { Easing, interpolate, random } from 'remotion';
 import type { Incident, Level, TimelineEvent } from '../shared/types.ts';
 import { IconG } from '../shared/Icon.tsx';
-import { ASSET_ICON, PHASE_COLOR, PHASE_ICON } from '../shared/theme.ts';
+import { ASSET_ICON, INK, PHASE_COLOR, PHASE_ICON } from '../shared/theme.ts';
 
 const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 const W = 320, H = 220;
-const CLEAN = '#38bdf8';
-const PWNED = '#ff3b5c';
+const CLEAN = INK.muted;
+const PWNED = INK.red;
 
 /** Small looping illustration of what the attacker did, drawn inside an event card. `f` = frames since the card appeared. */
 export function Vignette({ e, f, incident, level }: { e: TimelineEvent; f: number; incident: Incident; level: Level }) {
@@ -15,7 +15,7 @@ export function Vignette({ e, f, incident, level }: { e: TimelineEvent; f: numbe
     <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ overflow: 'visible', display: 'block' }}>
       <defs>
         <filter id={`vg-${e.id}`} x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="5" result="b" />
+          <feGaussianBlur stdDeviation="2.5" result="b" />
           <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
         </filter>
       </defs>
@@ -51,19 +51,19 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
             {/* once open, the flap sits behind the letter */}
             {flap < 0 && (
               <g transform={`translate(0 -40) scale(1 ${flap})`}>
-                <path d="M-62 0 L0 46 L62 0" fill="#2a2008" stroke={c} strokeWidth={4} strokeLinejoin="round" />
+                <path d="M-62 0 L0 46 L62 0" fill={INK.panel2} stroke={c} strokeWidth={2.5} strokeLinejoin="round" />
               </g>
             )}
             <g transform={`translate(0 ${-doc * 62})`} opacity={doc}>
-              <rect x={-34} y={-44} width={68} height={84} rx={6} fill="#f8fafc" />
+              <rect x={-34} y={-44} width={68} height={84} rx={6} fill={INK.text} />
               <circle cx={0} cy={-6} r={16} fill={PWNED} />
-              <path d="M0 -15v10M0 2v.5" stroke="#fff" strokeWidth={4} strokeLinecap="round" />
-              <path d="M-22 22h44M-22 30h30" stroke="#94a3b8" strokeWidth={3} />
+              <path d="M0 -15v10M0 2v.5" stroke={INK.white} strokeWidth={2.5} strokeLinecap="round" />
+              <path d="M-22 22h44M-22 30h30" stroke={INK.dim} strokeWidth={2} />
             </g>
-            <rect x={-62} y={-40} width={124} height={84} rx={8} fill="#1d1606" stroke={c} strokeWidth={4} filter={glow} />
+            <rect x={-62} y={-40} width={124} height={84} rx={8} fill={INK.panel} stroke={c} strokeWidth={2.5} filter={glow} />
             {flap >= 0 && (
               <g transform={`translate(0 -40) scale(1 ${flap})`}>
-                <path d="M-62 0 L0 46 L62 0" fill="#2a2008" stroke={c} strokeWidth={4} strokeLinejoin="round" />
+                <path d="M-62 0 L0 46 L62 0" fill={INK.panel2} stroke={c} strokeWidth={2.5} strokeLinejoin="round" />
               </g>
             )}
           </g>
@@ -79,16 +79,16 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const pop = interpolate(f, [30, 44], [0, 1], { ...clamp, easing: Easing.out(Easing.back(2.4)) });
       return (
         <g transform={`translate(${shake} 0)`}>
-          <rect x={20} y={22} width={260} height={170} rx={12} fill="#030712" stroke={c} strokeWidth={3} filter={glow} />
-          <rect x={20} y={22} width={260} height={28} rx={12} fill={`${c}33`} />
-          {[0, 1, 2].map((i) => <circle key={i} cx={40 + i * 16} cy={36} r={5} fill={['#ef4444', '#fbbf24', '#4ade80'][i]} />)}
+          <rect x={20} y={22} width={260} height={170} rx={12} fill={INK.bg} stroke={c} strokeWidth={2} filter={glow} />
+          <rect x={20} y={22} width={260} height={28} rx={12} fill={INK.panel2} />
+          {[0, 1, 2].map((i) => <circle key={i} cx={40 + i * 16} cy={36} r={5} fill={[INK.faint, INK.line2, INK.line2][i]} />)}
           {lines.map((w, i) => {
             const show = Math.max(0, Math.min(w, chars - used));
             used += w;
-            return <rect key={i} x={40} y={66 + i * 24} width={show} height={10} rx={5} fill={i === 3 ? c : '#4ade80'} opacity={0.85} />;
+            return <rect key={i} x={40} y={66 + i * 24} width={show} height={10} rx={5} fill={i === 3 ? c : INK.dim} opacity={0.85} />;
           })}
           <g transform={`translate(272 182) scale(${pop}) rotate(${f * 4})`}>
-            <circle r={36} fill="#2a0b0e" stroke={c} strokeWidth={4} filter={glow} />
+            <circle r={36} fill={INK.panel} stroke={c} strokeWidth={2.5} filter={glow} />
             <IconG name={PHASE_ICON[e.phase]} x={0} y={0} size={38} color={c} stroke={2.2} />
           </g>
         </g>
@@ -100,7 +100,7 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const pulses = [0, 1, 2, 3].map((i) => ((f + i * 18) % 72) / 72);
       return (
         <g opacity={show}>
-          <path d={curve(a, b, 0.25)} stroke={c} strokeWidth={3} strokeDasharray="8 10" strokeDashoffset={-f * 2} fill="none" />
+          <path d={curve(a, b, 0.25)} stroke={c} strokeWidth={2} strokeDasharray="8 10" strokeDashoffset={-f * 2} fill="none" />
           {pulses.map((t, i) => {
             const p = i % 2 ? onCurve(b, a, t, -0.25) : onCurve(a, b, t, 0.25);
             return <circle key={i} cx={p.x} cy={p.y} r={8} fill={c} filter={glow} opacity={Math.sin(t * Math.PI)} />;
@@ -121,7 +121,7 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
           <path d={`M${cx - 98} ${cy}h196M${cx} ${cy - 98}v196`} stroke={c} strokeOpacity={0.18} />
           {Array.from({ length: 14 }, (_, i) => {
             const ang = ((sweep - i * 3) * Math.PI) / 180;
-            return <line key={i} x1={cx} y1={cy} x2={cx + 98 * Math.cos(ang)} y2={cy + 98 * Math.sin(ang)} stroke={c} strokeWidth={3} opacity={(1 - i / 14) * 0.7} />;
+            return <line key={i} x1={cx} y1={cy} x2={cx + 98 * Math.cos(ang)} y2={cy + 98 * Math.sin(ang)} stroke={c} strokeWidth={2} opacity={(1 - i / 14) * 0.7} />;
           })}
           {blips.map((bl, i) => {
             const since = (((sweep - bl.a) % 360) + 360) % 360;
@@ -139,14 +139,14 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const keyT = interpolate(f, [40, 70], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
       return (
         <g>
-          <rect x={40} y={130} width={240} height={52} rx={12} fill="#0b1220" stroke={c} strokeWidth={3} />
-          {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={70 + i * 26} cy={156} r={8} fill={i < dots ? c : '#1e293b'} />)}
+          <rect x={40} y={130} width={240} height={52} rx={12} fill={INK.bg} stroke={c} strokeWidth={2} />
+          {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={70 + i * 26} cy={156} r={8} fill={i < dots ? c : INK.line} />)}
           <g transform={`translate(${160 + keyT * 90} ${92 - keyT * 50}) rotate(${keyT * 30}) scale(${0.6 + Math.min(1, f / 30) * 0.6})`} filter={glow}>
             <IconG name="key" x={0} y={0} size={64} color={c} stroke={2.4} />
           </g>
           {keyT > 0 && [0, 1, 2, 3].map((i) => {
             const a = (i / 4) * Math.PI * 2 + f / 10;
-            return <circle key={i} cx={250 + Math.cos(a) * 30 * keyT} cy={42 + Math.sin(a) * 30 * keyT} r={3} fill="#fff" opacity={1 - keyT * 0.6} />;
+            return <circle key={i} cx={250 + Math.cos(a) * 30 * keyT} cy={42 + Math.sin(a) * 30 * keyT} r={3} fill={INK.white} opacity={1 - keyT * 0.6} />;
           })}
         </g>
       );
@@ -160,9 +160,9 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const crown = interpolate(f, [40, 54], [0, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
       return (
         <g>
-          {[0, 1, 2, 3].map((i) => <rect key={i} x={40 + i * 60} y={196 - (i + 1) * 40} width={60} height={(i + 1) * 40} fill={`${c}${i <= Math.round(t) ? '44' : '18'}`} stroke={c} strokeOpacity={0.6} strokeWidth={2} />)}
+          {[0, 1, 2, 3].map((i) => <rect key={i} x={40 + i * 60} y={196 - (i + 1) * 40} width={60} height={(i + 1) * 40} fill={i <= Math.round(t) ? INK.panel2 : INK.panel} stroke={c} strokeOpacity={0.6} strokeWidth={2} />)}
           <circle cx={px} cy={py} r={14} fill={c} filter={glow} />
-          <g transform={`translate(250 -12) scale(${crown})`}><IconG name="crown" x={0} y={0} size={48} color="#fde047" stroke={2.4} /></g>
+          <g transform={`translate(250 -12) scale(${crown})`}><IconG name="crown" x={0} y={0} size={48} color={INK.white} stroke={2.4} /></g>
         </g>
       );
     }
@@ -175,13 +175,13 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const ring = interpolate(f, [40, 66], [0, 1], clamp);
       return (
         <g>
-          <path d={curve(a, b, -0.35)} stroke={c} strokeWidth={5} fill="none" strokeDasharray={len} strokeDashoffset={len * (1 - draw)} strokeLinecap="round" filter={glow} />
-          {ring > 0 && ring < 1 && <circle cx={b.x} cy={b.y} r={40 + ring * 70} fill="none" stroke={c} strokeWidth={3} opacity={1 - ring} />}
+          <path d={curve(a, b, -0.35)} stroke={c} strokeWidth={2} fill="none" strokeDasharray={len} strokeDashoffset={len * (1 - draw)} strokeLinecap="round" filter={glow} />
+          {ring > 0 && ring < 1 && <circle cx={b.x} cy={b.y} r={40 + ring * 70} fill="none" stroke={c} strokeWidth={2} opacity={1 - ring} />}
           <HostNode x={a.x} y={a.y} icon={ASSET_ICON[kindOf(e.fromHost)]} color={PWNED} glow={glow} label={name(e.fromHost)} />
           <HostNode x={b.x} y={b.y} icon={ASSET_ICON[kindOf(e.toHost)]} color={flip >= 0.5 ? PWNED : CLEAN} glow={glow} label={name(e.toHost)} />
           {draw > 0 && draw < 1 && (
             <g transform={`translate(${p.x} ${p.y})`}>
-              <circle r={18} fill="#0b1220" stroke={c} strokeWidth={3} />
+              <circle r={18} fill={INK.bg} stroke={c} strokeWidth={2} />
               <IconG name="key" x={0} y={0} size={18} color={c} />
             </g>
           )}
@@ -194,9 +194,9 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const appear = interpolate(f, [0, 12], [0, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
       return (
         <g transform={`translate(160 120) scale(${appear})`}>
-          {click > 0 && click < 1 && <circle r={60 + click * 80} fill="none" stroke={c} strokeWidth={3} opacity={1 - click} />}
-          <path d={`M-34 ${-10 + drop} v-26 a34 34 0 0 1 68 0 v26`} fill="none" stroke={c} strokeWidth={12} strokeLinecap="round" />
-          <rect x={-58} y={-12} width={116} height={92} rx={14} fill="#1c1030" stroke={c} strokeWidth={5} filter={glow} />
+          {click > 0 && click < 1 && <circle r={60 + click * 80} fill="none" stroke={c} strokeWidth={2} opacity={1 - click} />}
+          <path d={`M-34 ${-10 + drop} v-26 a34 34 0 0 1 68 0 v26`} fill="none" stroke={c} strokeWidth={8} strokeLinecap="round" />
+          <rect x={-58} y={-12} width={116} height={92} rx={14} fill={INK.panel} stroke={c} strokeWidth={2} filter={glow} />
           <circle cx={0} cy={26} r={10} fill={c} />
           <rect x={-4} y={30} width={8} height={22} rx={3} fill={c} />
         </g>
@@ -212,14 +212,14 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
             const x = interpolate(t, [0, 1], [sx, 160]), y = interpolate(t, [0, 1], [sy, 150]);
             return t < 1 ? (
               <g key={i} transform={`translate(${x} ${y}) rotate(${(1 - t) * (random(`cr${i}`) * 60 - 30)}) scale(${1 - t * 0.4})`}>
-                <rect x={-14} y={-18} width={28} height={36} rx={4} fill="#06201d" stroke={c} strokeWidth={2.5} />
+                <rect x={-14} y={-18} width={28} height={36} rx={4} fill={INK.panel} stroke={c} strokeWidth={2.5} />
                 <path d="M-7 -6h14M-7 1h14M-7 8h9" stroke={c} strokeWidth={2} />
               </g>
             ) : null;
           })}
-          <rect x={100} y={150} width={120} height={60} rx={8} fill="#06201d" stroke={c} strokeWidth={4} filter={glow} />
-          <rect x={94} y={136 - lid} width={132} height={18} rx={5} fill="#0b2e2a" stroke={c} strokeWidth={4} />
-          <path d="M148 178h24" stroke={c} strokeWidth={4} strokeLinecap="round" />
+          <rect x={100} y={150} width={120} height={60} rx={8} fill={INK.panel} stroke={c} strokeWidth={2.5} filter={glow} />
+          <rect x={94} y={136 - lid} width={132} height={18} rx={5} fill={INK.panel2} stroke={c} strokeWidth={2.5} />
+          <path d="M148 178h24" stroke={c} strokeWidth={2.5} strokeLinecap="round" />
         </g>
       );
     }
@@ -230,21 +230,21 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const prog = interpolate(f, [6, 90], [0, 1], clamp);
       return (
         <g>
-          <path d={curve(a, b, 0.2)} stroke={c} strokeOpacity={0.35} strokeWidth={12} fill="none" strokeLinecap="round" />
+          <path d={curve(a, b, 0.2)} stroke={c} strokeOpacity={0.35} strokeWidth={8} fill="none" strokeLinecap="round" />
           {Array.from({ length: 10 }, (_, i) => {
             const t = ((f - i * 7) % 56) / 56;
             if (f - i * 7 < 0) return null;
             const p = onCurve(a, b, t, 0.2 + (random(i) - 0.5) * 0.15);
             return (
               <g key={i} transform={`translate(${p.x} ${p.y}) rotate(${random(i + 9) * 30 - 15})`} opacity={Math.sin(t * Math.PI)}>
-                <rect x={-10} y={-13} width={20} height={26} rx={3} fill="#1f1308" stroke={c} strokeWidth={2} />
+                <rect x={-10} y={-13} width={20} height={26} rx={3} fill={INK.panel} stroke={c} strokeWidth={2} />
               </g>
             );
           })}
           <HostNode x={a.x} y={a.y} icon={ASSET_ICON[kindOf(e.host)]} color={PWNED} glow={glow} label={name(e.host)} />
           <HostNode x={b.x} y={b.y} icon="cloud" color={c} glow={glow} label="" />
           {total > 0 && (
-            <text x={262} y={140} textAnchor="middle" fill={c} fontSize={24} fontWeight={850} fontFamily="Consolas, monospace">
+            <text x={262} y={140} textAnchor="middle" fill={c} fontSize={24} fontWeight={850} fontFamily="JetBrains Mono, Consolas, monospace">
               {(total * prog).toFixed(total >= 10 ? 0 : 1)} {m![2].toUpperCase()}
             </text>
           )}
@@ -256,14 +256,14 @@ function Scene({ e, f, c, glow, incident, level }: { e: TimelineEvent; f: number
       const ex = interpolate(f, [10, 70], [-40, 340 * rows], clamp);
       return (
         <g>
-          <rect x={20} y={14} width={280} height={192} rx={12} fill="#030712" stroke="#334155" strokeWidth={2} />
+          <rect x={20} y={14} width={280} height={192} rx={12} fill={INK.bg} stroke={INK.line2} strokeWidth={2} />
           {Array.from({ length: rows }, (_, i) => {
             const local = ex - i * 340;
             const w = 60 + random(`dw${i}`) * 170;
             const cut = Math.max(0, Math.min(w, local - 40));
             return (
               <g key={i}>
-                <rect x={40 + cut} y={34 + i * 28} width={Math.max(0, w - cut)} height={10} rx={5} fill="#64748b" />
+                <rect x={40 + cut} y={34 + i * 28} width={Math.max(0, w - cut)} height={10} rx={5} fill={INK.faint} />
                 {local > -40 && local < 300 && <g transform={`translate(${40 + Math.min(local, w + 20)} ${36 + i * 28}) rotate(-20)`}><IconG name="eraser" x={0} y={-6} size={36} color={c} stroke={2.4} /></g>}
               </g>
             );
@@ -280,9 +280,9 @@ function HostNode({ x, y, icon, color, glow, label, pulse }: { x: number; y: num
   const r = 34 + (pulse != null ? Math.sin(pulse / 5) * 2 : 0);
   return (
     <g transform={`translate(${x} ${y})`}>
-      <circle r={r} fill="#0a1220" stroke={color} strokeWidth={3.5} filter={glow} />
+      <circle r={r} fill={INK.bg} stroke={color} strokeWidth={2} filter={glow} />
       <IconG name={icon} x={0} y={0} size={32} color={color} stroke={2} />
-      {label && <text y={r + 24} textAnchor="middle" fill="#cbd5e1" fontSize={16} fontWeight={650}>{label}</text>}
+      {label && <text y={r + 24} textAnchor="middle" fill={INK.muted} fontSize={14} fontWeight={500} letterSpacing={2}>{label}</text>}
     </g>
   );
 }

@@ -1,19 +1,41 @@
 import type { Asset, Level, PhaseId, Severity } from './types.ts';
 
+/**
+ * Monochrome palette (charcoal + off-white) with a single red accent that only ever means
+ * "compromised / damage". Inspired by minimal dark portfolio layouts; shared by web UI and video.
+ */
+export const INK = {
+  bg: '#16171a', // page
+  bg2: '#1c1d21', // raised surface
+  panel: '#202125', // cards
+  panel2: '#26272c',
+  line: '#2e3035', // hairlines
+  line2: '#3a3c42',
+  faint: '#55575e',
+  dim: '#7d7f86',
+  muted: '#a4a6ac',
+  text: '#e6e6e3', // off-white
+  white: '#f4f4f1',
+  red: '#e5484d',
+  redDim: '#7a2a2e',
+} as const;
+
+const HOT = INK.red; // attack phases where something got compromised or damaged
+const COLD = INK.text; // everything else
 export const PHASE_COLOR: Record<PhaseId, string> = {
-  recon: '#60a5fa',
-  'initial-access': '#fbbf24',
-  execution: '#ef4444',
-  persistence: '#c084fc',
-  'privilege-escalation': '#fb923c',
-  'defense-evasion': '#94a3b8',
-  'credential-access': '#a3e635',
-  discovery: '#38bdf8',
-  'lateral-movement': '#ff3b6b',
-  collection: '#2dd4bf',
-  'command-and-control': '#e879f9',
-  exfiltration: '#ff8a4c',
-  impact: '#f43f5e',
+  recon: COLD,
+  'initial-access': COLD,
+  execution: HOT,
+  persistence: COLD,
+  'privilege-escalation': COLD,
+  'defense-evasion': COLD,
+  'credential-access': COLD,
+  discovery: COLD,
+  'lateral-movement': HOT,
+  collection: COLD,
+  'command-and-control': COLD,
+  exfiltration: HOT,
+  impact: HOT,
 };
 
 export const PHASE_ICON: Record<PhaseId, IconName> = {
@@ -33,11 +55,11 @@ export const PHASE_ICON: Record<PhaseId, IconName> = {
 };
 
 export const SEV_COLOR: Record<Severity, string> = {
-  info: '#64748b',
-  low: '#38bdf8',
-  medium: '#fbbf24',
-  high: '#fb923c',
-  critical: '#ef4444',
+  info: INK.faint,
+  low: INK.dim,
+  medium: INK.muted,
+  high: INK.text,
+  critical: INK.red,
 };
 
 export const ASSET_ICON: Record<Asset['kind'], IconName> = {
@@ -51,10 +73,13 @@ export const ASSET_ICON: Record<Asset['kind'], IconName> = {
 };
 
 export const LEVEL_ACCENT: Record<Level, string> = {
-  layman: '#7dd3fc',
-  analyst: '#a78bfa',
-  senior: '#4ade80',
+  layman: INK.text,
+  analyst: INK.text,
+  senior: INK.text,
 };
+
+export const FONT_SANS = '"Jost", "Futura", "Century Gothic", "Segoe UI", system-ui, sans-serif';
+export const FONT_MONO = '"JetBrains Mono", "Cascadia Code", Consolas, monospace';
 
 export type IconName =
   | 'laptop' | 'server' | 'database' | 'building' | 'skull' | 'mail' | 'key' | 'lock' | 'bug' | 'search' | 'file'

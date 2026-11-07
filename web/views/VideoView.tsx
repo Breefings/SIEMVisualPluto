@@ -109,7 +109,7 @@ export function VideoView({ c, level, status }: { c: CaseSummary; level: Level; 
               const active = frame >= from && frame < from + (tl.find((t) => t.scene === scene)?.dur ?? 0);
               return (
                 <button key={scene.id} className={`chapter ${active ? 'on' : ''}`} onClick={() => { player.current?.seekTo(from); player.current?.play(); }}>
-                  <span className="ch-dot" style={{ background: e ? PHASE_COLOR[e.phase] : '#64748b' }} />
+                  <span className="ch-dot" style={{ background: e ? PHASE_COLOR[e.phase] : '#55575e' }} />
                   <span className="ch-time">{e ? fmtClock(e.ts) : scene.kind === 'intro' ? 'Intro' : scene.kind === 'summary' ? 'Recap' : 'Actions'}</span>
                   <span className="ch-title">{scene.heading}</span>
                 </button>

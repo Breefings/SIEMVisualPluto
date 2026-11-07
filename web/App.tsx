@@ -43,8 +43,8 @@ export function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <div className="logo"><Icon name="layers" size={18} color="#fff" /></div>
-          <span>Seen<b>Visualizer</b></span>
+          <div className="logo" aria-hidden><span>S</span><span>E</span><span>E</span><span>N</span></div>
+          <span className="brand-name"><b>Seen</b>Visualizer</span>
         </div>
         <div className="grow" />
         <div className="status-pills">
@@ -67,7 +67,7 @@ export function App() {
           {cases.length === 0 && <div className="muted small pad">No cases yet</div>}
           {cases.map((c) => (
             <button key={c.id} className={`case-item ${c.id === activeId ? 'active' : ''}`} onClick={() => { setActiveId(c.id); setView('timeline'); }}>
-              <span className="sev-dot" style={{ background: c.incident ? SEV_COLOR[c.incident.severity] : '#475569' }} />
+              <span className="sev-dot" style={{ background: c.incident ? SEV_COLOR[c.incident.severity] : '#55575e' }} />
               <span className="case-text">
                 <span className="case-name">{c.incident?.title && c.analysis.state === 'done' ? c.incident.title : c.name}</span>
                 <span className="case-meta">

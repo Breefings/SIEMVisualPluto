@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { CaseSummary, Level, Status, TimelineEvent } from '../../shared/types.ts';
 import { LEVELS, PHASES } from '../../shared/types.ts';
 import { Icon } from '../../shared/Icon.tsx';
-import { fmtClock, fmtDate, LEVEL_ACCENT, PHASE_COLOR, PHASE_ICON, SEV_COLOR } from '../../shared/theme.ts';
+import { fmtClock, fmtDate, INK, PHASE_COLOR, PHASE_ICON } from '../../shared/theme.ts';
 import { api } from '../api.ts';
 import { EventDetail } from '../components/EventDetail.tsx';
 import { InteractiveTimeline } from '../components/InteractiveTimeline.tsx';
@@ -59,7 +59,7 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
     return (
       <div className="page center-col">
         <div className="analyzing">
-          <Icon name="alert" size={36} color="#ef4444" />
+          <Icon name="alert" size={36} color="#e5484d" />
           <h2>Analysis failed</h2>
           <p className="muted">{c.analysis.error}</p>
           <button className="btn primary" onClick={() => api.analyze(c.id, engine).then(onUpdate)}>Retry</button>
@@ -77,7 +77,7 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
       {/* ---------- incident header ---------- */}
       <div className="inc-head">
         <div className="inc-title">
-          <span className="sev-tag" style={{ background: SEV_COLOR[inc.severity] }}>{inc.severity}</span>
+          <span className={`sev-tag ${inc.severity}`}>{inc.severity}</span>
           <h1>{level === 'layman' ? story.title : inc.title}</h1>
         </div>
         <div className="inc-meta">
@@ -92,7 +92,7 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
         {c.analysis.error && <div className="warnbox"><Icon name="alert" size={14} /> {c.analysis.error}</div>}
         <div className="killchain">
           {PHASES.filter((p) => phases.includes(p.id)).map((p, i) => (
-            <span key={p.id} className="kc-step" style={{ ['--c' as string]: PHASE_COLOR[p.id] }}>
+            <span key={p.id} className={`kc-step${PHASE_COLOR[p.id] === INK.red ? ' hot' : ''}`}>
               <Icon name={PHASE_ICON[p.id]} size={13} /> {level === 'layman' ? p.plain : p.label}
               {i < phases.length - 1 && <Icon name="chevron-right" size={12} />}
             </span>
@@ -104,7 +104,7 @@ export function TimelineView({ c, status, onUpdate }: { c: CaseSummary; status: 
       <div className="controls">
         <div className="levels">
           {LEVELS.map((l) => (
-            <button key={l.id} className={`level ${level === l.id ? 'on' : ''}`} style={{ ['--accent' as string]: LEVEL_ACCENT[l.id] }} onClick={() => setLevel(l.id)}>
+            <button key={l.id} className={`level ${level === l.id ? 'on' : ''}`} onClick={() => setLevel(l.id)}>
               <Icon name={LEVEL_ICON[l.id]} size={18} />
               <span><b>{l.label}</b></span>
             </button>

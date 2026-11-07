@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Easing } from 'remotion';
 import type { CaseSummary, Level, TimelineEvent } from '../../shared/types.ts';
 import { Icon } from '../../shared/Icon.tsx';
-import { LEVEL_ACCENT } from '../../shared/theme.ts';
+import { INK, LEVEL_ACCENT } from '../../shared/theme.ts';
 import { Backdrop, buildWorld, EventCard, FLY, FONT, Hud, smooth, TimelineAxis, type Cam, type World } from '../../video/stage.tsx';
 import { FPS } from '../../video/timing.ts';
 
@@ -201,7 +201,7 @@ export function InteractiveTimeline({ c, level, events, selected, onSelect, onWi
         }}
         onPointerUp={() => setTimeout(() => (drag.current = null), 0)}
       >
-        <div style={{ position: 'absolute', left: '50%', marginLeft: -960 * scale, top: 0, width: 1920, height: 1080, transform: `scale(${scale})`, transformOrigin: '0 0', overflow: 'hidden', background: '#040812', maskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)', fontFamily: FONT, color: '#e2e8f0' }}>
+        <div style={{ position: 'absolute', left: '50%', marginLeft: -960 * scale, top: 0, width: 1920, height: 1080, transform: `scale(${scale})`, transformOrigin: '0 0', overflow: 'hidden', background: INK.bg, maskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)', fontFamily: FONT, color: INK.text }}>
           <Backdrop cam={cam} frame={frame} accent={LEVEL_ACCENT[level]} now={now} show={!!sel} />
           <div style={{ position: 'absolute', left: 0, top: 0, transformOrigin: '0 0', transform: `translate(960px, ${540 + cam.oy}px) scale(${cam.s}) translate(${-cam.cx}px, ${-cam.cy}px)`, opacity: cardFade, pointerEvents: cardFade > 0.5 ? 'auto' : 'none' }}>
             {events.map((e, k) => (

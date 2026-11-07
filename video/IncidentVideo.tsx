@@ -1,8 +1,8 @@
 import { AbsoluteFill, Easing, Html5Audio, interpolate, Sequence, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import type { Incident, Level, Scene, TimelineEvent } from '../shared/types.ts';
 import { Icon } from '../shared/Icon.tsx';
-import { fmtDate, LEVEL_ACCENT, SEV_COLOR } from '../shared/theme.ts';
-import { Backdrop, buildWorld, clamp, EventCard, FLY, FONT, Hud, MONO, smooth, TimelineAxis, type Cam, type World } from './stage.tsx';
+import { fmtClock, fmtDate, INK } from '../shared/theme.ts';
+import { Backdrop, buildWorld, clamp, EventCard, FLY, FONT, Hud, LABEL, MONO, smooth, TimelineAxis, type Cam, type World } from './stage.tsx';
 import { FPS, LEAD_IN, timeline, type VideoProps } from './timing.ts';
 
 type Tl = ReturnType<typeof timeline>;
@@ -10,7 +10,7 @@ type Tl = ReturnType<typeof timeline>;
 /** Where the camera rests during scene i, `lf` frames in. */
 function restingCam(i: number, lf: number, tl: Tl, w: World): Cam {
   const { scene, dur } = tl[i];
-  if (scene.kind === 'intro') return { cx: w.mid, cy: 0, s: w.overview * interpolate(lf, [0, dur], [1.5, 1], { ...clamp, easing: Easing.out(Easing.quad) }), oy: 150 };
+  if (scene.kind === 'intro') return { cx: w.mid, cy: 0, s: w.overview * interpolate(lf, [0, dur], [1.5, 1], { ...clamp, easing: Easing.out(Easing.quad) }), oy: 190 };
   if (scene.kind === 'event') {
     const k = w.events.findIndex((e) => e.id === scene.eventId);
     const q = interpolate(lf, [FLY, dur], [0, 1], clamp);
@@ -18,8 +18,8 @@ function restingCam(i: number, lf: number, tl: Tl, w: World): Cam {
     // slow push-in while the narration plays, so the frame never sits still
     return { cx: (w.xs[k] ?? 0) + 40 * q, cy: side * w.camY, s: 1 + 0.07 * q, oy: 0 };
   }
-  if (scene.kind === 'summary') return { cx: w.mid, cy: 0, s: w.overview * interpolate(lf, [0, dur], [1, 1.06], clamp), oy: 170 };
-  return { cx: w.mid, cy: 0, s: w.overview * 0.92, oy: 280 };
+  if (scene.kind === 'summary') return { cx: w.mid, cy: 0, s: w.overview * interpolate(lf, [0, dur], [1, 1.06], clamp), oy: 190 };
+  return { cx: w.mid, cy: 0, s: w.overview * 0.92, oy: 300 };
 }
 
 function cameraAt(frame: number, i: number, tl: Tl, w: World): Cam {
@@ -76,15 +76,14 @@ export function IncidentVideo(props: VideoProps) {
   const introLine = tl[0]?.scene.kind === 'intro' && idx === 0 ? lf : 999;
 
   return (
-    <AbsoluteFill style={{ background: '#040812', fontFamily: FONT, color: '#e2e8f0', overflow: 'hidden' }}>
-      <Backdrop cam={cam} frame={frame} accent={LEVEL_ACCENT[level]} now={now} show={kind === 'event'} />
+    <AbsoluteFill style={{ background: INK.bg, fontFamily: FONT, color: INK.text, overflow: 'hidden' }}>
+      <Backdrop cam={cam} frame={frame} now={now} show={kind === 'event'} />
 
       {/* world layer: the event cards, moved by the camera */}
       <div style={{ position: 'absolute', left: 0, top: 0, transformOrigin: '0 0', transform: `translate(${960}px, ${540 + cam.oy}px) scale(${cam.s}) translate(${-cam.cx}px, ${-cam.cy}px)`, opacity: smooth(cam.s, 0.36, 0.5) }}>
         {events.map((e, k) => {
-          const visible = k <= curK;
-          if (!visible) return null;
-                    const cf = frame - (appearAt.get(e.id) ?? 0);
+          if (k > curK) return null;
+          const cf = frame - (appearAt.get(e.id) ?? 0);
           if (cf < 0) return null;
           return <EventCard key={e.id} e={e} heading={scenes.find((s) => s.eventId === e.id)!.heading} k={k} x={w.xs[k]} cf={cf} active={k === curK} level={level} incident={incident} evidence={props.evidence?.[e.id]} />;
         })}
@@ -99,7 +98,7 @@ export function IncidentVideo(props: VideoProps) {
           {scene.kind === 'intro' && <IntroOverlay incident={incident} level={level} scene={scene} dur={dur} />}
           {scene.kind === 'summary' && <SummaryOverlay incident={incident} level={level} scene={scene} dur={dur} />}
           {scene.kind === 'actions' && <ActionsOverlay level={level} scene={scene} dur={dur} />}
-          <Subtitles text={scene.narration} durationSec={scene.durationSec} dur={dur} size={level === 'layman' ? 36 : 32} />
+          <Subtitles text={scene.narration} durationSec={scene.durationSec} dur={dur} size={level === 'layman' ? 34 : 30} />
           {scene.audio && (
             <Sequence from={Math.round(LEAD_IN * FPS)} layout="none">
               <Html5Audio src={audioBase + scene.audio} />
@@ -112,26 +111,32 @@ export function IncidentVideo(props: VideoProps) {
 }
 
 // ---------------------------------------------------------------------------
+/** "I AM / TURA" layout: tiny tracked kicker, one huge uppercase word block, a tracked sub-line. */
 function IntroOverlay({ incident, level, scene, dur }: { incident: Incident; level: Level; scene: Scene; dur: number }) {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const out = interpolate(f, [dur - 14, dur], [1, 0], clamp);
-  const lift = interpolate(f, [dur - 14, dur], [0, -60], { ...clamp, easing: Easing.in(Easing.cubic) });
+  const lift = interpolate(f, [dur - 14, dur], [0, -40], { ...clamp, easing: Easing.in(Easing.cubic) });
   const words = scene.heading.split(' ');
-  const sev = SEV_COLOR[incident.severity];
+  const big = words.length <= 4 ? 108 : words.length <= 7 ? 82 : 66;
+  const critical = incident.severity === 'critical';
+  const k = interpolate(f, [0, 14], [0, 1], clamp);
   return (
-    <AbsoluteFill style={{ alignItems: 'center', paddingTop: 190, opacity: out, transform: `translateY(${lift}px)` }}>
-      <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: 26, opacity: interpolate(f, [0, 12], [0, 1], clamp) }}>
-        <span style={{ fontFamily: MONO, color: LEVEL_ACCENT[level], fontSize: 22, letterSpacing: 6 }}>{fmtDate(incident.startTs).toUpperCase()}</span>
-        <span style={{ padding: '5px 14px', borderRadius: 8, background: sev, color: '#0b0f17', fontWeight: 900, fontSize: 18, letterSpacing: 2, boxShadow: `0 0 ${20 + 14 * Math.sin(f / 5)}px ${sev}` }}>
-          {incident.severity.toUpperCase()}
-        </span>
-      </div>
-      <div style={{ fontSize: level === 'layman' ? 80 : 70, fontWeight: 850, lineHeight: 1.06, letterSpacing: -1.5, maxWidth: 1500, textAlign: 'center' }}>
-        {words.map((wd, i) => {
-          const s = spring({ frame: f - 6 - i * 3, fps, config: { damping: 14, stiffness: 120 } });
-          return <span key={i} style={{ display: 'inline-block', margin: '0 11px', transform: `translateY(${(1 - s) * 50}px) scale(${0.9 + 0.1 * s})`, opacity: s }}>{wd}</span>;
-        })}
+    <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-start', paddingTop: 210, opacity: out, transform: `translateY(${lift}px)` }}>
+      <div style={{ width: 1400, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ ...LABEL, alignSelf: 'flex-start', marginLeft: 120, fontSize: 16, color: INK.dim, opacity: k, marginBottom: 22 }}>
+          Incident report
+        </div>
+        <div style={{ fontSize: big, fontWeight: 600, lineHeight: 1.04, letterSpacing: '0.05em', textTransform: 'uppercase', textAlign: 'center', color: INK.white, textShadow: '0 20px 60px rgba(0,0,0,0.6)' }}>
+          {words.map((wd, i) => {
+            const s = spring({ frame: f - 6 - i * 3, fps, config: { damping: 18, stiffness: 110 } });
+            return <span key={i} style={{ display: 'inline-block', margin: '0 0.18em', transform: `translateY(${(1 - s) * 36}px)`, opacity: s }}>{wd}</span>;
+          })}
+        </div>
+        <div style={{ ...LABEL, alignSelf: 'flex-end', marginRight: 140, marginTop: 30, fontSize: 16, lineHeight: 2, color: INK.muted, opacity: interpolate(f, [18, 32], [0, 1], clamp), textAlign: 'left' }}>
+          <div>{fmtDate(incident.startTs)} · {fmtClock(incident.startTs)} – {fmtClock(incident.endTs)}</div>
+          <div style={{ color: critical ? INK.red : INK.muted }}>Severity · {incident.severity}</div>
+        </div>
       </div>
     </AbsoluteFill>
   );
@@ -145,26 +150,23 @@ function SummaryOverlay({ incident, level, scene, dur }: { incident: Incident; l
   const hosts = incident.assets.filter((a) => a.compromisedAt != null).length;
   const exfil = incident.events.find((e) => e.phase === 'exfiltration');
   const stats = [
-    { icon: 'clock' as const, label: level === 'layman' ? 'start to finish' : 'dwell time', value: hours >= 1 ? `${hours.toFixed(1)}h` : `${Math.round(hours * 60)}m`, color: '#7dd3fc' },
-    { icon: 'laptop' as const, label: level === 'layman' ? 'computers hit' : 'hosts compromised', value: String(hosts), color: '#ff3b5c' },
-    { icon: 'list' as const, label: level === 'layman' ? 'attack steps' : 'malicious events', value: String(incident.events.length), color: '#c084fc' },
+    { label: level === 'layman' ? 'start to finish' : 'dwell time', value: hours >= 1 ? `${hours.toFixed(1)}h` : `${Math.round(hours * 60)}m`, hot: false },
+    { label: level === 'layman' ? 'computers hit' : 'hosts compromised', value: String(hosts), hot: true },
+    { label: level === 'layman' ? 'attack steps' : 'malicious events', value: String(incident.events.length), hot: false },
     exfil
-      ? { icon: 'upload' as const, label: level === 'layman' ? 'data stolen' : 'exfiltrated', value: exfil.label.match(/[\d.]+\s*(GB|MB|KB|TB)/i)?.[0] ?? 'yes', color: '#ff8a4c' }
-      : { icon: 'alert' as const, label: 'severity', value: incident.severity, color: SEV_COLOR[incident.severity] },
+      ? { label: level === 'layman' ? 'data stolen' : 'exfiltrated', value: exfil.label.match(/[\d.]+\s*(GB|MB|KB|TB)/i)?.[0] ?? 'yes', hot: true }
+      : { label: 'severity', value: incident.severity, hot: incident.severity === 'critical' },
   ];
   return (
-    <AbsoluteFill style={{ alignItems: 'center', paddingTop: 150, opacity: out }}>
-      <div style={{ fontSize: 54, fontWeight: 850, marginBottom: 34, opacity: interpolate(f, [FLY - 10, FLY + 5], [0, 1], clamp) }}>{scene.heading}</div>
-      <div style={{ display: 'flex', gap: 24 }}>
+    <AbsoluteFill style={{ alignItems: 'center', paddingTop: 190, opacity: out }}>
+      <div style={{ ...LABEL, fontSize: 40, fontWeight: 600, letterSpacing: '0.16em', color: INK.white, marginBottom: 54, opacity: interpolate(f, [FLY - 10, FLY + 5], [0, 1], clamp) }}>{scene.heading}</div>
+      <div style={{ display: 'flex', border: `1px solid ${INK.line}`, background: 'rgba(30,31,35,0.88)', boxShadow: '0 40px 90px rgba(0,0,0,0.5)' }}>
         {stats.map((s, i) => {
-          const k = spring({ frame: f - FLY - i * 6, fps, config: { damping: 13 } });
+          const k = spring({ frame: f - FLY - i * 6, fps, config: { damping: 16 } });
           return (
-            <div key={i} style={{ width: 300, borderRadius: 22, padding: '22px 26px', background: 'rgba(15,23,42,0.85)', border: `1px solid ${s.color}55`, transform: `translateY(${(1 - k) * 50}px) scale(${0.8 + 0.2 * k})`, opacity: k, display: 'flex', alignItems: 'center', gap: 18 }}>
-              <Icon name={s.icon} size={38} color={s.color} />
-              <div>
-                <div style={{ fontSize: 50, fontWeight: 850, color: s.color, fontFamily: MONO, letterSpacing: -2, lineHeight: 1 }}>{s.value}</div>
-                <div style={{ fontSize: 19, color: '#94a3b8', marginTop: 6 }}>{s.label}</div>
-              </div>
+            <div key={i} style={{ width: 330, padding: '34px 38px', borderRight: i < stats.length - 1 ? `1px solid ${INK.line}` : 0, transform: `translateY(${(1 - k) * 30}px)`, opacity: k }}>
+              <div style={{ fontFamily: FONT, fontSize: 72, fontWeight: 300, color: s.hot ? INK.red : INK.white, letterSpacing: 1, lineHeight: 1 }}>{s.value}</div>
+              <div style={{ ...LABEL, fontSize: 14, color: INK.dim, marginTop: 16 }}>{s.label}</div>
             </div>
           );
         })}
@@ -180,22 +182,20 @@ function ActionsOverlay({ level, scene, dur }: { level: Level; scene: Scene; dur
   const items = (scene.bullets ?? []).slice(0, 6);
   const per = Math.max(12, Math.floor((dur - 50) / Math.max(1, items.length)));
   return (
-    <AbsoluteFill style={{ padding: '130px 200px 0', opacity: out }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 32, opacity: interpolate(f, [10, 24], [0, 1], clamp) }}>
-        <Icon name="shield" size={52} color={LEVEL_ACCENT[level]} />
-        <div style={{ fontSize: 54, fontWeight: 850 }}>{scene.heading}</div>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <AbsoluteFill style={{ padding: '160px 260px 0', opacity: out }}>
+      <div style={{ ...LABEL, fontSize: 40, fontWeight: 600, letterSpacing: '0.16em', color: INK.white, marginBottom: 46, opacity: interpolate(f, [10, 24], [0, 1], clamp) }}>{scene.heading}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', borderTop: `1px solid ${INK.line}` }}>
         {items.map((b, i) => {
-          const k = spring({ frame: f - 16 - i * 7, fps, config: { damping: 16 } });
+          const k = spring({ frame: f - 16 - i * 7, fps, config: { damping: 18 } });
           const done = f > 30 + i * per;
-          const tick = spring({ frame: f - 30 - i * per, fps, config: { damping: 10, stiffness: 200 } });
+          const tick = spring({ frame: f - 30 - i * per, fps, config: { damping: 12, stiffness: 200 } });
           return (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 20, opacity: k, transform: `translateX(${(1 - k) * -80}px)`, fontSize: level === 'senior' ? 25 : 29, lineHeight: 1.3 }}>
-              <div style={{ flex: '0 0 auto', width: 44, height: 44, borderRadius: 12, border: `3px solid ${done ? '#4ade80' : '#334155'}`, background: done ? '#4ade8022' : 'rgba(15,23,42,0.8)', display: 'grid', placeItems: 'center' }}>
-                {done && <span style={{ transform: `scale(${tick})`, display: 'grid' }}><Icon name="check" size={28} color="#4ade80" stroke={3} /></span>}
-              </div>
-              <span style={{ color: done ? '#f1f5f9' : '#94a3b8' }}>{b}</span>
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 30, padding: '20px 0', borderBottom: `1px solid ${INK.line}`, opacity: k, transform: `translateX(${(1 - k) * -50}px)`, fontSize: level === 'senior' ? 24 : 28, lineHeight: 1.35, fontWeight: 300 }}>
+              <span style={{ fontFamily: MONO, fontSize: 18, color: INK.faint, width: 34 }}>{String(i + 1).padStart(2, '0')}</span>
+              <span style={{ flex: 1, color: done ? INK.white : INK.dim }}>{b}</span>
+              <span style={{ flex: '0 0 auto', width: 34, height: 34, borderRadius: '50%', border: `1px solid ${done ? INK.text : INK.line2}`, display: 'grid', placeItems: 'center' }}>
+                {done && <span style={{ transform: `scale(${tick})`, display: 'grid' }}><Icon name="check" size={18} color={INK.text} stroke={2} /></span>}
+              </span>
             </div>
           );
         })}
@@ -239,14 +239,15 @@ function Subtitles({ text, durationSec, dur, size }: { text: string; durationSec
   const words = s.split(/\s+/);
   let wacc = 0;
   return (
-    <div style={{ position: 'absolute', left: 0, right: 0, bottom: 54, display: 'flex', justifyContent: 'center', opacity: out * interpolate(f, [t0 - 6, t0 + 4], [0, 1], clamp) }}>
-      <div style={{ maxWidth: 1480, padding: '14px 30px', borderRadius: 18, background: 'rgba(4,8,18,0.72)', backdropFilter: 'blur(8px)', fontSize: size, lineHeight: 1.35, fontWeight: 600, textAlign: 'center', opacity: inK, transform: `translateY(${(1 - inK) * 14}px)` }}>
+    <div style={{ position: 'absolute', left: 0, right: 0, bottom: 64, display: 'flex', justifyContent: 'center', opacity: out * interpolate(f, [t0 - 6, t0 + 4], [0, 1], clamp) }}>
+      <div style={{ maxWidth: 1440, padding: '6px 30px', fontSize: size, lineHeight: 1.45, fontWeight: 400, letterSpacing: 0.4, textAlign: 'center', textShadow: '0 2px 18px rgba(0,0,0,0.9)', opacity: inK, transform: `translateY(${(1 - inK) * 10}px)` }}>
         {words.map((wd, i) => {
           wacc += wd.length + 1;
           const lit = wacc / (s.length + 1) <= local + 0.04;
-          return <span key={i} style={{ color: lit ? '#f8fafc' : '#64748b' }}>{wd} </span>;
+          return <span key={i} style={{ color: lit ? INK.white : INK.faint }}>{wd} </span>;
         })}
       </div>
     </div>
   );
 }
+
