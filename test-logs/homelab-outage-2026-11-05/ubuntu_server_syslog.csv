@@ -1,0 +1,85 @@
+timestamp,host,process,user,src_ip,level,message
+2026-11-05T00:00:00Z,ubuntu-srv,CRON,,,info,(root) CMD (test -x /usr/sbin/anacron || run-parts --report /etc/cron.daily)
+2026-11-05T00:17:00Z,ubuntu-srv,systemd,,,info,Starting logrotate.service - Rotate log files...
+2026-11-05T00:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T00:17:02Z,ubuntu-srv,systemd,,,info,logrotate.service: Deactivated successfully. (note: Docker container JSON logs are not covered by logrotate)
+2026-11-05T01:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T02:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T03:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T04:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T05:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T06:12:00Z,ubuntu-srv,systemd,,,info,Starting apt-daily-upgrade.service - Daily apt upgrade and clean activities...
+2026-11-05T06:14:30Z,ubuntu-srv,unattended-upgrades,,,info,Packages that will be upgraded: libssl3t64 openssl tzdata
+2026-11-05T06:15:41Z,ubuntu-srv,unattended-upgrades,,,info,All upgrades installed
+2026-11-05T06:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T07:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T08:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T09:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T09:30:00Z,ubuntu-srv,disk-monitor,,,warning,/ (/dev/sda2) usage at 75% (45.0 GB of 60.0 GB); largest growth: /var/lib/docker/containers
+2026-11-05T10:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T10:20:00Z,ubuntu-srv,disk-monitor,,,warning,/ (/dev/sda2) usage at 80% (48.0 GB of 60.0 GB); largest growth: /var/lib/docker/containers
+2026-11-05T10:55:00Z,ubuntu-srv,disk-monitor,,,error,/ (/dev/sda2) usage at 85% (51.0 GB of 60.0 GB); largest growth: /var/lib/docker/containers
+2026-11-05T11:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T11:25:00Z,ubuntu-srv,disk-monitor,,,error,/ (/dev/sda2) usage at 90% (54.0 GB of 60.0 GB); largest growth: /var/lib/docker/containers
+2026-11-05T11:50:00Z,ubuntu-srv,disk-monitor,,,critical,/ (/dev/sda2) usage at 95% (57.0 GB of 60.0 GB); largest growth: /var/lib/docker/containers
+2026-11-05T12:05:00Z,ubuntu-srv,disk-monitor,,,critical,/ (/dev/sda2) usage at 98% (58.8 GB of 60.0 GB); largest growth: /var/lib/docker/containers
+2026-11-05T12:11:59Z,ubuntu-srv,dockerd,,,error,"level=error msg=""Error writing log message"" container=web error=""write /var/lib/docker/containers/4f1c9e.../4f1c9e...-json.log: no space left on device"""
+2026-11-05T12:12:01Z,ubuntu-srv,dockerd,,,info,"level=info msg=""ignoring event"" container=web module=libcontainerd namespace=moby topic=/tasks/delete type=""*events.TaskDelete"""
+2026-11-05T12:12:02Z,ubuntu-srv,kernel,,,info,docker0: port 1(veth7a1c2e4) entered disabled state
+2026-11-05T12:12:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=1 (restart policy unless-stopped)"
+2026-11-05T12:13:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:16:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=2 (restart policy unless-stopped)"
+2026-11-05T12:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T12:17:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:20:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=3 (restart policy unless-stopped)"
+2026-11-05T12:21:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:24:51Z,ubuntu-srv,sshd,sysadmin,192.168.1.21,info,Accepted publickey for sysadmin from 192.168.1.21 port 51522 ssh2: ED25519 SHA256:q7Lw0dYk...
+2026-11-05T12:24:51Z,ubuntu-srv,systemd-logind,sysadmin,,info,New session 41 of user sysadmin.
+2026-11-05T12:24:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=4 (restart policy unless-stopped)"
+2026-11-05T12:25:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:25:30Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/docker ps -a
+2026-11-05T12:26:10Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/docker logs --tail 50 web
+2026-11-05T12:27:44Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/df -h
+2026-11-05T12:28:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=5 (restart policy unless-stopped)"
+2026-11-05T12:29:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:29:02Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/du -xh --max-depth=2 /var/lib/docker
+2026-11-05T12:31:00Z,ubuntu-srv,admin-note,sysadmin,,warning,"Root cause: /var/lib/docker/containers/4f1c9e...-json.log is 17.2 GB (nginx access log via json-file driver, no size limit); / is 100% full"
+2026-11-05T12:32:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=6 (restart policy unless-stopped)"
+2026-11-05T12:33:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:36:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=7 (restart policy unless-stopped)"
+2026-11-05T12:37:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:38:15Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/truncate -s 0 /var/lib/docker/containers/4f1c9e.../4f1c9e...-json.log
+2026-11-05T12:40:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=8 (restart policy unless-stopped)"
+2026-11-05T12:41:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:41:03Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/docker image prune -af
+2026-11-05T12:41:40Z,ubuntu-srv,dockerd,,,info,"level=info msg=""Deleted Images: 6 images, total reclaimed space 2.3GB"""
+2026-11-05T12:44:59Z,ubuntu-srv,dockerd,,,info,"level=info msg=""restarting container"" container=web restartCount=9 (restart policy unless-stopped)"
+2026-11-05T12:45:00.900Z,ubuntu-srv,dockerd,,,error,"level=error msg=""container web exited with code 1 (nginx: [emerg] mkdir() failed: No space left on device)"""
+2026-11-05T12:47:30Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/apt-get clean
+2026-11-05T12:48:02Z,ubuntu-srv,disk-monitor,,,info,/ (/dev/sda2) usage back to 58% (34.8 GB of 60.0 GB)
+2026-11-05T12:48:55Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/docker start web
+2026-11-05T12:49:02Z,ubuntu-srv,dockerd,,,info,"level=info msg=""container web started"" image=nginx:1.27 ports=""0.0.0.0:80->80/tcp"""
+2026-11-05T12:49:02Z,ubuntu-srv,kernel,,,info,docker0: port 1(veth3d9b0a1) entered forwarding state
+2026-11-05T12:58:40Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/nano /etc/docker/daemon.json
+2026-11-05T13:01:00Z,ubuntu-srv,admin-note,sysadmin,,info,"Set log rotation for containers in /etc/docker/daemon.json: {""log-driver"":""json-file"",""log-opts"":{""max-size"":""50m"",""max-file"":""5""}}"
+2026-11-05T13:04:50Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/systemctl restart docker
+2026-11-05T13:04:52Z,ubuntu-srv,systemd,,,info,Stopping docker.service - Docker Application Container Engine...
+2026-11-05T13:05:19Z,ubuntu-srv,systemd,,,info,Started docker.service - Docker Application Container Engine.
+2026-11-05T13:05:21Z,ubuntu-srv,dockerd,,,info,"level=info msg=""container web started"" image=nginx:1.27 (log-opts max-size=50m max-file=5)"
+2026-11-05T13:12:09Z,ubuntu-srv,sudo,sysadmin,,info,sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/docker compose -f /opt/web/compose.yaml config
+2026-11-05T13:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T13:20:04Z,ubuntu-srv,sshd,sysadmin,192.168.1.21,info,Disconnected from user sysadmin 192.168.1.21 port 51522
+2026-11-05T13:20:04Z,ubuntu-srv,systemd-logind,sysadmin,,info,Session 41 logged out. Waiting for processes to exit.
+2026-11-05T14:02:31Z,ubuntu-srv,systemd-resolved,,,warning,Using degraded feature set UDP instead of UDP+EDNS0 for DNS server 192.168.1.1.
+2026-11-05T14:09:40Z,ubuntu-srv,systemd-timesyncd,,,info,"Network configuration changed, trying to establish connection."
+2026-11-05T14:09:52Z,ubuntu-srv,systemd-timesyncd,,,info,Contacted time server 185.125.190.56:123 (ntp.ubuntu.com).
+2026-11-05T14:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T15:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T16:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T17:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T18:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T19:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T20:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T21:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T22:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-11-05T23:17:00Z,ubuntu-srv,CRON,,,info,(root) CMD (cd / && run-parts --report /etc/cron.hourly)

@@ -1,0 +1,36 @@
+timestamp,host,process,user,level,message
+2026-11-05T08:16:13Z,desktop-1,kernel,,info,Linux version 6.8.0-48-generic (buildd@lcy02-amd64-040) #48-Ubuntu SMP PREEMPT_DYNAMIC
+2026-11-05T08:16:22Z,desktop-1,NetworkManager,,info,"<info> device (ens18): DHCPv4 lease renewed, address 192.168.1.21"
+2026-11-05T08:16:44Z,desktop-1,gdm-password],alice,info,pam_unix(gdm-password:session): session opened for user alice(uid=1000) by (uid=0)
+2026-11-05T08:16:46Z,desktop-1,systemd-logind,alice,info,New session 2 of user alice.
+2026-11-05T08:17:48Z,desktop-1,firefox,alice,info,opened http://192.168.1.10/ (intranet shop)
+2026-11-05T08:19:03Z,desktop-2,kernel,,info,Linux version 6.8.0-48-generic (buildd@lcy02-amd64-040) #48-Ubuntu SMP PREEMPT_DYNAMIC
+2026-11-05T08:19:12Z,desktop-2,NetworkManager,,info,"<info> device (ens18): DHCPv4 lease renewed, address 192.168.1.22"
+2026-11-05T08:19:34Z,desktop-2,gdm-password],bob,info,pam_unix(gdm-password:session): session opened for user bob(uid=1000) by (uid=0)
+2026-11-05T08:19:36Z,desktop-2,systemd-logind,bob,info,New session 2 of user bob.
+2026-11-05T08:20:38Z,desktop-2,firefox,bob,info,opened http://192.168.1.10/ (intranet shop)
+2026-11-05T08:29:57Z,desktop-3,kernel,,info,Linux version 6.8.0-48-generic (buildd@lcy02-amd64-040) #48-Ubuntu SMP PREEMPT_DYNAMIC
+2026-11-05T08:30:06Z,desktop-3,NetworkManager,,info,"<info> device (ens18): DHCPv4 lease renewed, address 192.168.1.23"
+2026-11-05T08:30:28Z,desktop-3,gdm-password],carol,info,pam_unix(gdm-password:session): session opened for user carol(uid=1000) by (uid=0)
+2026-11-05T08:30:30Z,desktop-3,systemd-logind,carol,info,New session 2 of user carol.
+2026-11-05T08:31:32Z,desktop-3,firefox,carol,info,opened http://192.168.1.10/ (intranet shop)
+2026-11-05T12:02:10Z,desktop-1,gnome-shell,alice,warning,"Notification: ""Shop site slow - customers reporting errors"" (from team chat)"
+2026-11-05T12:17:00Z,desktop-3,firefox,carol,warning,page load failed: http://192.168.1.10/products -> connection refused
+2026-11-05T12:20:00Z,desktop-2,firefox,bob,warning,page load failed: http://192.168.1.10/products -> connection refused
+2026-11-05T12:22:00Z,desktop-1,firefox,alice,warning,page load failed: http://192.168.1.10/products -> connection refused
+2026-11-05T12:24:48Z,desktop-1,ssh,alice,info,sysadmin@192.168.1.10: connected (ED25519 key)
+2026-11-05T12:51:00Z,desktop-3,firefox,carol,info,opened http://192.168.1.10/ (loaded OK)
+2026-11-05T12:52:00Z,desktop-1,firefox,alice,info,opened http://192.168.1.10/ (loaded OK)
+2026-11-05T12:53:00Z,desktop-2,firefox,bob,info,opened http://192.168.1.10/ (loaded OK)
+2026-11-05T14:02:35Z,desktop-1,NetworkManager,,warning,<warn> connectivity check failed: no route to internet (WAN down?)
+2026-11-05T14:02:35Z,desktop-2,NetworkManager,,warning,<warn> connectivity check failed: no route to internet (WAN down?)
+2026-11-05T14:02:35Z,desktop-3,NetworkManager,,warning,<warn> connectivity check failed: no route to internet (WAN down?)
+2026-11-05T14:09:45Z,desktop-1,NetworkManager,,info,<info> connectivity is now FULL
+2026-11-05T14:09:45Z,desktop-2,NetworkManager,,info,<info> connectivity is now FULL
+2026-11-05T14:09:45Z,desktop-3,NetworkManager,,info,<info> connectivity is now FULL
+2026-11-05T17:34:00Z,desktop-2,gdm-password],bob,info,pam_unix(gdm-password:session): session closed for user bob
+2026-11-05T17:35:00Z,desktop-1,gdm-password],alice,info,pam_unix(gdm-password:session): session closed for user alice
+2026-11-05T17:40:00Z,desktop-3,gdm-password],carol,info,pam_unix(gdm-password:session): session closed for user carol
+2026-11-05T18:00:23.346Z,desktop-1,systemd-shutdown,,info,Powering off.
+2026-11-05T18:00:35.400Z,desktop-3,systemd-shutdown,,info,Powering off.
+2026-11-05T18:00:39.810Z,desktop-2,systemd-shutdown,,info,Powering off.

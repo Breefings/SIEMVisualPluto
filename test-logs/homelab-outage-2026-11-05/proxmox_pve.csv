@@ -1,0 +1,25 @@
+timestamp,host,process,user,src_ip,event,level,message
+2026-11-05T01:00:00Z,pve-01,pvescheduler,root@pam,,vzdump,info,starting new backup job: vzdump 100 101 102 110 --mode snapshot --storage local-backup --compress zstd
+2026-11-05T01:01:00Z,pve-01,vzdump,,,backup-start,info,INFO: Starting Backup of VM 100 (qemu) - desktop-1
+2026-11-05T01:05:00Z,pve-01,vzdump,,,backup-ok,info,INFO: Finished Backup of VM 100 (00:04:12) - archive vzdump-qemu-100-2026_11_05-01_00_00.vma.zst
+2026-11-05T01:11:00Z,pve-01,vzdump,,,backup-start,info,INFO: Starting Backup of VM 101 (qemu) - desktop-2
+2026-11-05T01:15:00Z,pve-01,vzdump,,,backup-ok,info,INFO: Finished Backup of VM 101 (00:04:12) - archive vzdump-qemu-101-2026_11_05-01_01_00.vma.zst
+2026-11-05T01:21:00Z,pve-01,vzdump,,,backup-start,info,INFO: Starting Backup of VM 102 (qemu) - desktop-3
+2026-11-05T01:26:00Z,pve-01,vzdump,,,backup-ok,info,INFO: Finished Backup of VM 102 (00:05:12) - archive vzdump-qemu-102-2026_11_05-01_02_00.vma.zst
+2026-11-05T01:31:00Z,pve-01,vzdump,,,backup-start,info,INFO: Starting Backup of VM 110 (qemu) - ubuntu-srv
+2026-11-05T01:40:00Z,pve-01,vzdump,,,backup-ok,info,INFO: Finished Backup of VM 110 (00:09:12) - archive vzdump-qemu-110-2026_11_05-01_03_00.vma.zst
+2026-11-05T01:50:00Z,pve-01,vzdump,,,backup-ok,info,INFO: Backup job finished successfully
+2026-11-05T08:02:00Z,pve-01,pvedaemon,root@pam,,qmstart,info,<root@pam> starting task UPID:pve-01:qmstart:101: start VM 101 (desktop-2)
+2026-11-05T08:03:00Z,pve-01,pvedaemon,root@pam,,qmstart,info,<root@pam> starting task UPID:pve-01:qmstart:100: start VM 100 (desktop-1)
+2026-11-05T08:04:00Z,pve-01,pvedaemon,root@pam,,qmstart,info,<root@pam> starting task UPID:pve-01:qmstart:102: start VM 102 (desktop-3)
+2026-11-05T11:45:10Z,pve-01,pvestatd,,,,info,VM 110 (ubuntu-srv): disk write throughput sustained at 38 MB/s for 30 min
+2026-11-05T12:35:20Z,pve-01,pvedaemon,root@pam,192.168.1.21,login,info,<root@pam> successful auth for user 'root@pam' from 192.168.1.21
+2026-11-05T12:36:05Z,pve-01,pvedaemon,root@pam,,,info,root@pam: checked VM 110 hardware: scsi0 local-lvm:vm-110-disk-0 size=60G (considering resize)
+2026-11-05T12:44:00Z,pve-01,pvedaemon,root@pam,,snapshot,info,"<root@pam> starting task UPID:pve-01:qmsnapshot:110: snapshot VM 110 ""before-cleanup"""
+2026-11-05T12:44:31Z,pve-01,pvedaemon,root@pam,,snapshot,info,<root@pam> end task UPID:pve-01:qmsnapshot:110: OK
+2026-11-05T13:30:00Z,pve-01,pvedaemon,root@pam,,resize,info,<root@pam> starting task UPID:pve-01:qmresize:110: resize scsi0 +20G
+2026-11-05T13:30:04Z,pve-01,pvedaemon,root@pam,,resize,info,<root@pam> end task UPID:pve-01:qmresize:110: OK (scsi0 now 80G)
+2026-11-05T14:02:40Z,pve-01,pve-ha-crm,,,,warning,status change: wan unreachable for apt/subscription checks
+2026-11-05T18:00:00Z,pve-01,pvedaemon,,,qmshutdown,info,VM 101 shutdown by guest OS
+2026-11-05T18:01:00Z,pve-01,pvedaemon,,,qmshutdown,info,VM 102 shutdown by guest OS
+2026-11-05T18:02:00Z,pve-01,pvedaemon,,,qmshutdown,info,VM 100 shutdown by guest OS
